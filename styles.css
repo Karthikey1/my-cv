@@ -1,140 +1,252 @@
-<!DOCTYPE html>
-<html lang="en">
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karthikey Kadati - Content Creator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #2E2E2E;
-            color: white;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
-        .container {
-            width: 80%;
-            margin: 0 auto;
-        }
+:root {
+    --primary-color: #ff7613;
+    --text-color: #727171;
+}
 
-        .header {
-            text-align: center;
-            padding: 20px 0;
-        }
+html {
+    font-size: 10px;
+}
 
-        .header h1 {
-            font-size: 2.5rem;
-        }
+body {
+    font-family: Inter, sans-serif;
+    background-color: black;
+    color: white;
+}
 
-        .header p {
-            font-size: 1.2rem;
-            margin: 10px 0;
-        }
+/* Common Styles */
+img {
+    width: 100%;
+}
 
-        .section {
-            margin-bottom: 30px;
-        }
+a {
+    text-decoration: none;
+    color: white;
+}
 
-        .section h2 {
-            font-size: 2rem;
-            border-bottom: 2px solid #fff;
-            padding-bottom: 5px;
-        }
+.description {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text-color);
+}
 
-        .section p,
-        .section ul {
-            font-size: 1.1rem;
-            margin: 10px 0;
-        }
+.title {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
 
-        .section ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
+.item_preTitle {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    font-weight: 300;
+}
 
-        .links a {
-            color: #4CAF50;
-            text-decoration: none;
-            font-weight: bold;
-        }
+.item_title {
+    font-size: 1.6rem;
+    color: white;
+    font-weight: 500;
+    margin: 0.8rem 0;
+}
 
-        .links a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
+.item_subtitle {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    font-weight: 400;
+}
 
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>Karthikey Kadati</h1>
-            <p><i>Content Creator | Script Writer | Influencer Marketing Specialist</i></p>
-            <div class="links">
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/karthikey-kadati-277420279">Karthikey Kadati</a> | GitHub: <a href="https://github.com/Karthikey1">Karthikey1</a></p>
-            </div>
-        </div>
+/* Layouts */
+.container {
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    padding: 5rem;
+    background: #070707;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
 
-        <div class="section">
-            <h2>Objective</h2>
-            <p>Creative and resilient content creator with over 5 years of experience in scriptwriting, video production, and digital marketing. Passionate about creating authentic, engaging content that resonates with audiences. After facing challenges in the past, I am determined to make this time a success, applying everything I’ve learned to consistently grow my content and connect with people.</p>
-        </div>
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        grid-template-columns: 1fr;
+        padding: 3rem;
+        gap: 7rem;
+    }
+}
 
-        <div class="section">
-            <h2>Experience</h2>
-            <div class="experience">
-                <h3>Content Creator & Script Writer</h3>
-                <p><i>Self-Employed | 2020 – Present</i></p>
-                <ul>
-                    <li>Created, scripted, and produced content for two YouTube channels:</li>
-                    <ul>
-                        <li><strong>Channel 1: "In 1 Minute" (2020)</strong> – Focused on tech reviews, facts, gameplay, and educational content. Although consistency was a challenge due to entrance exam preparation, this channel laid the groundwork for my journey in content creation. <a href="https://youtube.com/@in1minute255?feature=shared">Link to Channel 1</a></li>
-                        <li><strong>Channel 2: "Infosphere" (2023)</strong> – Focused on AI, tech, car reviews, and movie facts using AI. Despite past setbacks, I’m committed to ensuring this channel’s success with more consistent and refined content. <a href="https://youtube.com/@infosphere9?feature=shared">Link to Channel 2</a></li>
-                    </ul>
-                    <li>Managed content creation from ideation to final video, applying storytelling techniques to engage viewers.</li>
-                    <li>Used SEO strategies to optimize content for greater reach and discoverability.</li>
-                </ul>
+.profile {
+    grid-column: 1 / -1;
+    margin-bottom: 2rem;
+}
 
-                <h3>Freelance Influencer Marketing Enthusiast</h3>
-                <p><i>2020 – Present</i></p>
-                <ul>
-                    <li>Created insightful tech reviews and explored various niches, engaging audiences with well-researched, valuable content.</li>
-                    <li>Analyzed data to continuously improve content strategies for higher viewer retention and interaction.</li>
-                </ul>
-            </div>
-        </div>
+.group-1,
+.group-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
 
-        <div class="section">
-            <h2>Projects</h2>
-            <div class="project">
-                <h3>YouTube Channel - "In 1 Minute"</h3>
-                <p>Launched in 2020, this channel covered tech reviews, gameplay, and educational content. Despite not being able to maintain consistency due to entrance exam preparation, it provided valuable learning experiences and insights into content creation. <a href="https://youtube.com/@in1minute255?feature=shared">Link to Channel 1</a></p>
-            </div>
-            <div class="project">
-                <h3>YouTube Channel - "Infosphere"</h3>
-                <p>Created in 2023, this channel focuses on AI, tech, car reviews, and movie facts using AI. Although I initially struggled with consistency, I am determined to make this channel successful by leveraging all the lessons learned from previous experiences. <a href="https://youtube.com/@infosphere9?feature=shared">Link to Channel 2</a></p>
-            </div>
-        </div>
+.group-3 {
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+    grid-column: 1/-1;
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+}
 
-        <div class="section">
-            <h2>Skills</h2>
-            <ul>
-                <li>Scriptwriting & Storytelling</li>
-                <li>Video Production & Editing (YouTube)</li>
-                <li>Social Media Content Creation (YouTube)</li>
-                <li>Audience Engagement & Analytics</li>
-                <li>SEO & Content Optimization</li>
-                <li>AI & Tech Content Expertise</li>
-            </ul>
-        </div>
+.group-3 > div {
+    flex: 1;
+}
 
-        <div class="section">
-            <h2>Personal Story</h2>
-            <p>My journey in content creation began when I was 15, creating my first video. In 2020, I launched "In 1 Minute," a channel focusing on tech reviews, gameplay, and educational content. Due to entrance exam preparation, I couldn’t maintain consistency, but the experience helped me learn the ropes of content creation. In 2023, I launched "Infosphere," focusing on AI, tech, car reviews, and movie facts using AI. Although I faced setbacks, my resilience has driven me to make this time different. I’m committed to creating valuable content and growing my presence by combining my technical knowledge with my passion for content creation.</p>
-        </div>
-    </div>
-</body>
+@media only screen and (max-width: 768px) {
+    .profile {
+        margin-bottom: 0;
+    }
+    .group-3 {
+        flex-direction: column;
+    }
+}
 
-</html>
+/* Profile Section */
+.profile_container {
+    display: flex;
+    gap: 2rem;
+}
+
+.profile_profileImg {
+    max-width: 250px;
+}
+
+.profile_profileImg img {
+    width: 100%;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 0 10px rgba(255, 118, 19, 0.5);
+}
+
+.profile_name_firstName {
+    color: white;
+    font-weight: 200;
+    font-size: clamp(2rem, 8vw, 4rem);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: -0.8rem;
+}
+
+.profile_name_lastName {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: clamp(2.5rem, 15vw, 7rem);
+    text-transform: uppercase;
+    display: block;
+}
+
+.profile_title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.downloadBtn {
+    display: block;
+    text-decoration: underline;
+    font-size: 1.6rem;
+    margin-top: 1rem;
+}
+
+.downloadBtn:hover {
+    color: var(--primary-color);
+}
+
+@media only screen and (max-width: 768px) {
+    .profile_container {
+        flex-direction: column;
+    }
+}
+
+/* Skills Section */
+.skills_list {
+    margin-top: 1rem;
+    margin-left: 2rem;
+    line-height: 2;
+}
+
+/* Social Section */
+.social_items {
+    margin-top: 2rem;
+}
+
+.social_item {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: flex-start;
+    color: var(--text-color);
+}
+
+.social_item a {
+    color: var(--text-color);
+}
+
+.social_item:hover {
+    color: var(--primary-color);
+}
+
+.social_item svg {
+    width: 2rem;
+}
+
+/* Interests Section */
+.interest_items {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.interest_item {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--text-color);
+}
+
+.interest_item svg {
+    width: 2rem;
+}
+
+/* HR Divider */
+hr {
+    grid-column: 1/-1;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-top: 2px solid rgba(128, 128, 128, 0.229);
+}
+
+@media only screen and (max-width: 768px) {
+    hr {
+        margin: 0 auto;
+    }
+}
