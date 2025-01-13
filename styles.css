@@ -1,159 +1,140 @@
-/* General Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #181818;
-    color: #fff;
-}
+<!DOCTYPE html>
+<html lang="en">
 
-/* Header Section */
-.hero-section {
-    height: 100vh;
-    background: linear-gradient(45deg, #FF0000, #FF6F00); /* YouTube red gradient */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    animation: fadeIn 3s ease-in-out;
-    position: relative;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karthikey Kadati - Content Creator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2E2E2E;
+            color: white;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
 
-.hero-text h1 {
-    font-size: 4rem;
-    animation: typing 3s steps(20) 1s infinite normal both;
-    color: white;
-}
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
 
-.hero-text p {
-    font-size: 1.5rem;
-    margin: 10px 0;
-}
+        .header {
+            text-align: center;
+            padding: 20px 0;
+        }
 
-.cta-button {
-    background-color: #FF0000;
-    color: #fff;
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    border-radius: 25px;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-}
+        .header h1 {
+            font-size: 2.5rem;
+        }
 
-.cta-button:hover {
-    background-color: #FF6F00;
-    transform: scale(1.1);
-}
+        .header p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
 
-/* About Section */
-#about {
-    padding: 50px;
-    background-color: #222222;
-    animation: slideUp 1.5s ease-in-out;
-}
+        .section {
+            margin-bottom: 30px;
+        }
 
-#about p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-}
+        .section h2 {
+            font-size: 2rem;
+            border-bottom: 2px solid #fff;
+            padding-bottom: 5px;
+        }
 
-/* Experience Section */
-#experience .cards {
-    display: flex;
-    gap: 30px;
-    margin-top: 30px;
-}
+        .section p,
+        .section ul {
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
 
-#experience .card {
-    background-color: #333333;
-    padding: 20px;
-    border-radius: 10px;
-    flex: 1;
-    transition: transform 0.3s ease-in-out;
-}
+        .section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
 
-#experience .card:hover {
-    transform: scale(1.05);
-}
+        .links a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-#experience .card a {
-    display: inline-block;
-    margin-top: 15px;
-    color: #FF0000;
-    font-size: 1.2rem;
-    text-decoration: none;
-}
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
 
-#experience .card a:hover {
-    text-decoration: underline;
-}
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Karthikey Kadati</h1>
+            <p><i>Content Creator | Script Writer | Influencer Marketing Specialist</i></p>
+            <div class="links">
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/karthikey-kadati-277420279">Karthikey Kadati</a> | GitHub: <a href="https://github.com/Karthikey1">Karthikey1</a></p>
+            </div>
+        </div>
 
-.fab {
-    margin-right: 10px;
-}
+        <div class="section">
+            <h2>Objective</h2>
+            <p>Creative and resilient content creator with over 5 years of experience in scriptwriting, video production, and digital marketing. Passionate about creating authentic, engaging content that resonates with audiences. After facing challenges in the past, I am determined to make this time a success, applying everything I’ve learned to consistently grow my content and connect with people.</p>
+        </div>
 
-/* Skills Section */
-#skills .progress-bar {
-    height: 10px;
-    background-color: #4CAF50;
-    margin: 5px 0;
-    border-radius: 5px;
-}
+        <div class="section">
+            <h2>Experience</h2>
+            <div class="experience">
+                <h3>Content Creator & Script Writer</h3>
+                <p><i>Self-Employed | 2020 – Present</i></p>
+                <ul>
+                    <li>Created, scripted, and produced content for two YouTube channels:</li>
+                    <ul>
+                        <li><strong>Channel 1: "In 1 Minute" (2020)</strong> – Focused on tech reviews, facts, gameplay, and educational content. Although consistency was a challenge due to entrance exam preparation, this channel laid the groundwork for my journey in content creation. <a href="https://youtube.com/@in1minute255?feature=shared">Link to Channel 1</a></li>
+                        <li><strong>Channel 2: "Infosphere" (2023)</strong> – Focused on AI, tech, car reviews, and movie facts using AI. Despite past setbacks, I’m committed to ensuring this channel’s success with more consistent and refined content. <a href="https://youtube.com/@infosphere9?feature=shared">Link to Channel 2</a></li>
+                    </ul>
+                    <li>Managed content creation from ideation to final video, applying storytelling techniques to engage viewers.</li>
+                    <li>Used SEO strategies to optimize content for greater reach and discoverability.</li>
+                </ul>
 
-#skills .skill {
-    margin-bottom: 20px;
-}
+                <h3>Freelance Influencer Marketing Enthusiast</h3>
+                <p><i>2020 – Present</i></p>
+                <ul>
+                    <li>Created insightful tech reviews and explored various niches, engaging audiences with well-researched, valuable content.</li>
+                    <li>Analyzed data to continuously improve content strategies for higher viewer retention and interaction.</li>
+                </ul>
+            </div>
+        </div>
 
-/* Footer Section */
-footer {
-    background-color: #222222;
-    padding: 20px;
-    text-align: center;
-    color: #fff;
-}
+        <div class="section">
+            <h2>Projects</h2>
+            <div class="project">
+                <h3>YouTube Channel - "In 1 Minute"</h3>
+                <p>Launched in 2020, this channel covered tech reviews, gameplay, and educational content. Despite not being able to maintain consistency due to entrance exam preparation, it provided valuable learning experiences and insights into content creation. <a href="https://youtube.com/@in1minute255?feature=shared">Link to Channel 1</a></p>
+            </div>
+            <div class="project">
+                <h3>YouTube Channel - "Infosphere"</h3>
+                <p>Created in 2023, this channel focuses on AI, tech, car reviews, and movie facts using AI. Although I initially struggled with consistency, I am determined to make this channel successful by leveraging all the lessons learned from previous experiences. <a href="https://youtube.com/@infosphere9?feature=shared">Link to Channel 2</a></p>
+            </div>
+        </div>
 
-footer a {
-    color: #FF0000;
-    text-decoration: none;
-    margin: 0 10px;
-}
+        <div class="section">
+            <h2>Skills</h2>
+            <ul>
+                <li>Scriptwriting & Storytelling</li>
+                <li>Video Production & Editing (YouTube)</li>
+                <li>Social Media Content Creation (YouTube)</li>
+                <li>Audience Engagement & Analytics</li>
+                <li>SEO & Content Optimization</li>
+                <li>AI & Tech Content Expertise</li>
+            </ul>
+        </div>
 
-footer a:hover {
-    text-decoration: underline;
-}
+        <div class="section">
+            <h2>Personal Story</h2>
+            <p>My journey in content creation began when I was 15, creating my first video. In 2020, I launched "In 1 Minute," a channel focusing on tech reviews, gameplay, and educational content. Due to entrance exam preparation, I couldn’t maintain consistency, but the experience helped me learn the ropes of content creation. In 2023, I launched "Infosphere," focusing on AI, tech, car reviews, and movie facts using AI. Although I faced setbacks, my resilience has driven me to make this time different. I’m committed to creating valuable content and growing my presence by combining my technical knowledge with my passion for content creation.</p>
+        </div>
+    </div>
+</body>
 
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes slideUp {
-    from { opacity: 0; transform: translateY(50px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero-text h1 {
-        font-size: 2.5rem;
-    }
-
-    .cta-button {
-        padding: 10px 20px;
-    }
-
-    .cards {
-        flex-direction: column;
-    }
-
-    .card {
-        margin-bottom: 20px;
-    }
-}
+</html>
