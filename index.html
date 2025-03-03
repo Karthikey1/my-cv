@@ -1,1 +1,239 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Karthikey Kadati | Portfolio</title>
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #000;
+      line-height: 1.6;
+    }
+    header {
+      background: #000;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    header nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+    header nav ul li {
+      margin: 0 15px;
+    }
+    header nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      padding: 100px 20px;
+      text-align: center;
+    }
+    section {
+      padding: 60px 20px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2em;
+      border-bottom: 2px solid #000;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+   
+    .projects, .skills, .experience {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .project, .skill, .experience-item {
+      flex: 1 1 calc(50% - 20px);
+      border: 1px solid #000;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    .contact-info {
+      text-align: center;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #000;
+      color: #fff;
+    }
+    
+    @media (max-width: 768px) {
+      .project, .skill, .experience-item {
+        flex: 1 1 100%;
+      }
+      header nav ul {
+        flex-direction: column;
+      }
+      header nav ul li {
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header>
+    <div class="container">
+      <h1>Karthikey Kadati</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h2>Welcome to My Portfolio</h2>
+      <p>B.E. in Information Science & Engineering | Passionate Developer & Innovator</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p>Hello, I'm Karthikey Kadati, a second-year Information Science and Engineering student at University Visvesvaraya College of Engineering (UVCE). I have a keen interest in software development, digital design, and innovative technology solutions.</p>
+      <p>I’m always working on projects that challenge my skills in programming and digital design while exploring new technologies.</p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects">
+        <div class="project">
+          <h3>Community Connect Application</h3>
+          <p>Won 1st prize at RVITM Build Your Web Hackathon. Developed a community connect application integrated with a business model.</p>
+        </div>
+        <div class="project">
+          <h3>4-Bit Counter Design in Verilog</h3>
+          <p>Designed and simulated a 4-bit counter using Verilog.</p>
+        </div>
+        <div class="project">
+          <h3>Accident Prediction Web App</h3>
+          <p>Developed a web application with an ML model to predict accident probabilities during the Uyir Hackathon.</p>
+        </div>
+        <div class="project">
+          <h3>Campus Hub Website</h3>
+          <p>Built a campus hub website during the GDSC Hackathon in my 1st year.</p>
+        </div>
+        <div class="project">
+          <h3>Virtual Wardrobe Management System</h3>
+          <p>Conceptualized an interactive system to help users organize personal items.</p>
+        </div>
+        <div class="project">
+          <h3>Portfolio Website</h3>
+          <p>Developed a responsive portfolio website to showcase my skills and projects.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills">
+        <div class="skill">
+          <h3>Programming</h3>
+          <p>C, C++, HTML, CSS, JavaScript, Python</p>
+        </div>
+        <div class="skill">
+          <h3>HDLs</h3>
+          <p>Basic Verilog, Introductory SystemVerilog/VHDL</p>
+        </div>
+        <div class="skill">
+          <h3>Digital Design</h3>
+          <p>Counters, Flip-flops, Multiplexers</p>
+        </div>
+        <div class="skill">
+          <h3>Soft Skills</h3>
+          <p>Communication, Event Management, Problem-Solving</p>
+        </div>
+        <div class="skill">
+          <h3>Operating Systems</h3>
+          <p>Windows, Linux</p>
+        </div>
+        <div class="skill">
+          <h3>Other</h3>
+          <p>Public Relations, Event Promotion, Marketing, Outreach</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title">Experience & Engagement</h2>
+      <div class="experience">
+        <div class="experience-item">
+          <h3>Marvel Open Learner</h3>
+          <p>Engaged in open learning and coursework related to MARVEL.</p>
+        </div>
+        <div class="experience-item">
+          <h3>E-Cell UVCE, Core Team Member (2023 – Present)</h3>
+          <p>Organized and promoted campus events, including "Becoming the Best You" by Ishaan Sharma.</p>
+        </div>
+        <div class="experience-item">
+          <h3>Hackathons</h3>
+          <p>Participated in CodeFury and BnB Hackathon.</p>
+        </div>
+        <div class="experience-item">
+          <h3>Community Engagement</h3>
+          <p>Participated in IEEE, GDG-UVCE events, and IISc Open Day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact Me</h2>
+      <div class="contact-info">
+        <p><strong>Phone:</strong> +91 9900713608</p>
+        <p><strong>Email:</strong> <a href="mailto:karthikey3608@gmail.com">karthikey3608@gmail.com</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/karthikey-kadati-277420279" target="_blank">Karthikey Kadati</a></p>
+        <p><strong>Portfolio:</strong> <a href="https://karthikey1.github.io/my-cv/" target="_blank">View Portfolio</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Karthikey Kadati. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
