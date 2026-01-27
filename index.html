@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Karthikey Kadati | Software Developer & AI Enthusiast</title>
+  <title>Karthikey Kadati | Linux Kernel & RTEMS Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <!-- Navigation -->
   <nav class="navbar">
@@ -17,31 +19,12 @@
         <span class="logo-text">KK</span>
       </div>
       <ul class="nav-menu">
-        <li class="nav-item">
-          <a href="#about" class="nav-link">About</a>
-        </li>
-        <li class="nav-item">
-          <a href="#projects" class="nav-link">Projects</a>
-        </li>
-        <li class="nav-item">
-          <a href="#skills" class="nav-link">Skills</a>
-        </li>
-        <li class="nav-item">
-          <a href="#achievements" class="nav-link">Achievements</a>
-        </li>
-        <li class="nav-item">
-          <a href="#contact" class="nav-link">Contact</a>
-        </li>
+        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="#stack" class="nav-link">Tech Stack</a></li>
+        <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+        <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
-      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-        <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="5"/>
-          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-        </svg>
-        <svg class="theme-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-        </svg>
-      </button>
       <div class="hamburger">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -52,89 +35,33 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-container">
+    <div class="container hero-container">
       <div class="hero-content">
-        <h1 class="hero-title">
-          <span class="hero-greeting">Hello, I'm</span>
-          <span class="hero-name">Karthikey Kadati</span>
-        </h1>
-        <p class="hero-subtitle">Information Science Engineering Student | Software Developer & AI Enthusiast</p>
+        <h1 class="hero-name">Karthikey Kadati</h1>
+        <h2 class="hero-subtitle">Linux Kernel Contributor | RTEMS Developer</h2>
         <p class="hero-description">
-          Passionate about building innovative solutions and exploring cutting-edge technologies. 
-          Currently pursuing B.Tech in Information Science & Engineering at UVCE, with a focus on 
-          software development and artificial intelligence.
+          Systems programmer specializing in operating system internals, real-time kernels, and embedded development.
+          Active contributor to the Linux Kernel staging drivers and the RTEMS Real-Time Operating System.
+          Focused on low-level optimization, driver development, and kernel synchronization primitives.
         </p>
         <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">View My Work</a>
-          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="code-block">
-          <div class="code-header">
-            <div class="code-dots">
-              <span class="dot red"></span>
-              <span class="dot yellow"></span>
-              <span class="dot green"></span>
-            </div>
-            <span class="code-title">portfolio.js</span>
-          </div>
-          <div class="code-content">
-            <div class="code-line">
-              <span class="code-keyword">const</span> 
-              <span class="code-variable">developer</span> 
-              <span class="code-operator">=</span> 
-              <span class="code-string">'Karthikey'</span>
-            </div>
-            <div class="code-line">
-              <span class="code-keyword">const</span> 
-              <span class="code-variable">passion</span> 
-              <span class="code-operator">=</span> 
-              <span class="code-string">'AI & Software Dev'</span>
-            </div>
-            <div class="code-line">
-              <span class="code-keyword">const</span> 
-              <span class="code-variable">goal</span> 
-              <span class="code-operator">=</span> 
-              <span class="code-string">'Innovation'</span>
-            </div>
-          </div>
+          <a href="#projects" class="btn btn-primary">Projects</a>
+          <a href="#contact" class="btn btn-secondary">Contact</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="section">
+  <!-- Tech Stack Section (Replacing Skills) -->
+  <section id="stack" class="section">
     <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <div class="about-content">
-        <div class="about-text">
-          <p class="about-description">
-            I'm a dedicated Information Science Engineering student at University Visvesvaraya College of Engineering (UVCE), 
-            with a strong passion for software development and artificial intelligence. My journey in technology is driven 
-            by curiosity and a desire to create meaningful solutions that make a difference.
-          </p>
-          <p class="about-description">
-            I actively participate in hackathons, contribute to open-source projects, and continuously expand my knowledge 
-            in emerging technologies. My goal is to secure a Software Development or AI role where I can apply my skills 
-            to solve real-world problems and drive innovation.
-          </p>
-          <div class="about-stats">
-            <div class="stat">
-              <span class="stat-number">6+</span>
-              <span class="stat-label">Projects Completed</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">3</span>
-              <span class="stat-label">Hackathon Wins</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">2+</span>
-              <span class="stat-label">Years Learning</span>
-            </div>
-          </div>
-        </div>
+      <h2 class="section-title">Technical Stack</h2>
+      <div class="stack-grid">
+        <div class="stack-item">C</div>
+        <div class="stack-item">Assembly</div>
+        <div class="stack-item">Linux Kernel Internals</div>
+        <div class="stack-item">Real-time Systems (RTEMS)</div>
+        <div class="stack-item">SQL</div>
       </div>
     </div>
   </section>
@@ -142,151 +69,60 @@
   <!-- Projects Section -->
   <section id="projects" class="section">
     <div class="container">
-      <h2 class="section-title">Project Case Studies</h2>
+      <h2 class="section-title">Engineering Projects</h2>
       <div class="projects-grid">
-        
-        <!-- Community Connect App -->
-        <div class="project-card featured">
-          <div class="project-header">
-            <h3 class="project-title">Community Connect App</h3>
-            <span class="project-badge">1st Place Winner</span>
+
+        <!-- FMLP RTEMS -->
+        <div class="project-card">
+          <h3 class="project-title">FMLP Implementation for RTEMS</h3>
+          <span class="project-badge">RTEMS Kernel</span>
+          <p class="project-description">
+            Implemented the Flexible Multiprocessor Locking Protocol (FMLP) for the RTEMS SMP environment.
+            Developed FMLP-Short (spin-based) and FMLP-Long (suspension-based) mechanisms to optimize resource sharing
+            in multi-core real-time systems.
+          </p>
+          <div class="project-tech">
+            <span>C</span> <span>SMP</span> <span>Concurrency</span>
           </div>
-          <div class="project-content">
-            <p class="project-description">
-              A comprehensive community platform that connects local businesses with residents, 
-              featuring real-time messaging, event management, and business listings.
-            </p>
-            <div class="project-metrics">
-              <div class="metric">
-                <span class="metric-value">95%</span>
-                <span class="metric-label">Mobile Optimized</span>
-              </div>
-              <div class="metric">
-                <span class="metric-value">300+</span>
-                <span class="metric-label">Test Users</span>
-              </div>
-              <div class="metric">
-                <span class="metric-value">1000+</span>
-                <span class="metric-label">Listings</span>
-              </div>
-            </div>
-            <div class="project-tech">
-              <span class="tech-tag">React.js</span>
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">MongoDB</span>
-              <span class="tech-tag">Supabase</span>
-            </div>
+        </div>
+
+        <!-- Atomisp Driver -->
+        <div class="project-card">
+          <h3 class="project-title">Linux Kernel Atomisp Driver Refactor</h3>
+          <span class="project-badge">Linux Kernel</span>
+          <p class="project-description">
+            Refactored the Atomisp camera driver in the Linux staging tree.
+            Fixed coding style violations, optimized memory handling, and resolved sparse warnings to improve driver
+            stability and maintainability.
+          </p>
+          <div class="project-tech">
+            <span>C</span> <span>Linux Kernel</span> <span>Drivers</span>
           </div>
         </div>
 
         <!-- Accident Prediction App -->
         <div class="project-card">
-          <div class="project-header">
-            <h3 class="project-title">Accident Prediction App</h3>
-            <span class="project-badge">UYIR Hackathon</span>
-          </div>
-          <div class="project-content">
-            <p class="project-description">
-              Machine learning-powered web application that predicts accident probabilities 
-              based on traffic patterns, weather conditions, and historical data.
-            </p>
-            <div class="project-metrics">
-              <div class="metric">
-                <span class="metric-value">85.3%</span>
-                <span class="metric-label">ML Model Accuracy</span>
-              </div>
-              <div class="metric">
-                <span class="metric-value">&lt;2s</span>
-                <span class="metric-label">Response Time</span>
-              </div>
-            </div>
-            <div class="project-tech">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Machine Learning</span>
-              <span class="tech-tag">Flask</span>
-              <span class="tech-tag">TensorFlow</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Campus Hub -->
-        <div class="project-card">
-          <div class="project-header">
-            <h3 class="project-title">Campus Hub Website</h3>
-            <span class="project-badge">GDSC Hackathon</span>
-          </div>
-          <div class="project-content">
-            <p class="project-description">
-              Centralized platform for campus information, event management, and student resources, 
-              streamlining access to university services and activities.
-            </p>
-            <div class="project-metrics">
-              <div class="metric">
-                <span class="metric-value">50%</span>
-                <span class="metric-label">Information Access Increase</span>
-              </div>
-            </div>
-            <div class="project-tech">
-              <span class="tech-tag">HTML/CSS</span>
-              <span class="tech-tag">JavaScript</span>
-              <span class="tech-tag">Bootstrap</span>
-            </div>
+          <h3 class="project-title">Accident Prediction System</h3>
+          <span class="project-badge">Machine Learning</span>
+          <p class="project-description">
+            Developed a predictive model for accident probabilities using traffic and weather data.
+            Achieved 85.3% accuracy in forecasting potential accident zones.
+          </p>
+          <div class="project-tech">
+            <span>Python</span> <span>TensorFlow</span> <span>Data Analysis</span>
           </div>
         </div>
 
         <!-- 4-Bit Counter -->
         <div class="project-card">
-          <div class="project-header">
-            <h3 class="project-title">4-Bit Counter Design</h3>
-            <span class="project-badge">Hardware</span>
-          </div>
-          <div class="project-content">
-            <p class="project-description">
-              Digital circuit design and simulation of a 4-bit counter using Verilog HDL, 
-              demonstrating understanding of sequential logic and hardware description languages.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">Verilog</span>
-              <span class="tech-tag">Digital Design</span>
-              <span class="tech-tag">Simulation</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Virtual Wardrobe -->
-        <div class="project-card">
-          <div class="project-header">
-            <h3 class="project-title">Virtual Wardrobe Management</h3>
-            <span class="project-badge">Concept</span>
-          </div>
-          <div class="project-content">
-            <p class="project-description">
-              Interactive system concept for organizing personal items with AI-powered 
-              recommendations and smart categorization features.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">UI/UX Design</span>
-              <span class="tech-tag">Concept Development</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Portfolio Website -->
-        <div class="project-card">
-          <div class="project-header">
-            <h3 class="project-title">Portfolio Website</h3>
-            <span class="project-badge">Personal</span>
-          </div>
-          <div class="project-content">
-            <p class="project-description">
-              Responsive portfolio website showcasing skills, projects, and achievements 
-              with modern design principles and optimal user experience.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">HTML/CSS</span>
-              <span class="tech-tag">JavaScript</span>
-              <span class="tech-tag">Responsive Design</span>
-            </div>
+          <h3 class="project-title">4-Bit Counter Design</h3>
+          <span class="project-badge">Hardware Design</span>
+          <p class="project-description">
+            Designed and simulated a 4-bit synchronous counter using Verilog HDL.
+            Verified timing constraints and logic correctness through digital simulation.
+          </p>
+          <div class="project-tech">
+            <span>Verilog</span> <span>Digital Logic</span>
           </div>
         </div>
 
@@ -294,228 +130,33 @@
     </div>
   </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="section">
-    <div class="container">
-      <h2 class="section-title">Technical Skills</h2>
-      <div class="skills-container">
-        
-        <div class="skill-category">
-          <h3 class="skill-category-title">Programming Languages</h3>
-          <div class="skills-grid">
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Python</span>
-                <span class="skill-level">Advanced</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-width="90%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">JavaScript</span>
-                <span class="skill-level">Advanced</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-width="85%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">C/C++</span>
-                <span class="skill-level">Intermediate</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-width="75%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3 class="skill-category-title">Frameworks & Technologies</h3>
-          <div class="skills-tags">
-            <span class="skill-tag">React.js</span>
-            <span class="skill-tag">Node.js</span>
-            <span class="skill-tag">Supabase</span>
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">DSA</span>
-            <span class="skill-tag">Machine Learning</span>
-            <span class="skill-tag">TensorFlow</span>
-            <span class="skill-tag">Flask</span>
-            <span class="skill-tag">MongoDB</span>
-            <span class="skill-tag">HTML/CSS</span>
-            <span class="skill-tag">Bootstrap</span>
-            <span class="skill-tag">Verilog</span>
-            <span class="skill-tag">SystemVerilog</span>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3 class="skill-category-title">Soft Skills</h3>
-          <div class="skills-tags">
-            <span class="skill-tag">Problem Solving</span>
-            <span class="skill-tag">Communication</span>
-            <span class="skill-tag">Event Management</span>
-            <span class="skill-tag">Public Relations</span>
-            <span class="skill-tag">Marketing</span>
-            <span class="skill-tag">Team Leadership</span>
-            <span class="skill-tag">Project Management</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Achievements Section -->
-  <section id="achievements" class="section achievements-section">
-    <div class="container">
-      <h2 class="section-title">Achievements & Recognition</h2>
-      <div class="achievements-grid">
-        
-        <div class="achievement-card primary">
-          <div class="achievement-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M6 9l6 6 6-6"/>
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-            </svg>
-          </div>
-          <div class="achievement-content">
-            <h3 class="achievement-title">First Place Winner</h3>
-            <p class="achievement-event">RVITM Build Your Web Hackathon</p>
-            <p class="achievement-description">
-              Secured first place for developing the Community Connect Application, 
-              showcasing full-stack development skills and innovative problem-solving.
-            </p>
-          </div>
-        </div>
-
-        <div class="achievement-card secondary">
-          <div class="achievement-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-            </svg>
-          </div>
-          <div class="achievement-content">
-            <h3 class="achievement-title">Certificate of Merit</h3>
-            <p class="achievement-event">National Level Road Safety Hackathon 2025 (UYIR)</p>
-            <p class="achievement-description">
-              Recognized for developing an AI-powered accident prediction system 
-              with 85.3% accuracy, contributing to road safety innovation.
-            </p>
-          </div>
-        </div>
-
-        <div class="achievement-card tertiary">
-          <div class="achievement-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
-              <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
-            </svg>
-          </div>
-          <div class="achievement-content">
-            <h3 class="achievement-title">Resource Management Excellence</h3>
-            <p class="achievement-event">Jest Junction, UVCE DTI</p>
-            <p class="achievement-description">
-              Achieved 1.8x ROI through efficient resource management and strategic planning 
-              in event organization and project execution.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience Section -->
+  <!-- Experience/Achievements Section -->
   <section id="experience" class="section">
     <div class="container">
-      <h2 class="section-title">Experience & Engagement</h2>
+      <h2 class="section-title">Timeline & Recognition</h2>
       <div class="experience-timeline">
-        
+
         <div class="timeline-item">
-          <div class="timeline-marker"></div>
+          <span class="timeline-date">Current</span>
           <div class="timeline-content">
-            <h3 class="timeline-title">B.Tech., Information Science & Engineering</h3>
-            <span class="timeline-period">2023 – 2027 (Ongoing)</span>
-            <p class="timeline-description">
-              Pursuing degree at University Visvesvaraya College of Engineering (UVCE) with a current GPA of 8.72. 
-              Focused on software development, artificial intelligence, and innovative technology solutions.
-            </p>
+            <h3>B.Tech, Information Science & Engineering</h3>
+            <p>University Visvesvaraya College of Engineering (UVCE). GPA: 8.72.</p>
           </div>
         </div>
 
         <div class="timeline-item">
-          <div class="timeline-marker"></div>
+          <span class="timeline-date">Feb 2025</span>
           <div class="timeline-content">
-            <h3 class="timeline-title">National Hackathon Finalist</h3>
-            <span class="timeline-period">08-09 Feb 2025</span>
-            <p class="timeline-description">
-              Awarded Certificate of Merit in the UYIR Road Safety Hackathon 2025 Grand Finale. 
-              Recognized for developing innovative solutions in road safety technology.
-            </p>
+            <h3>National Hackathon Finalist</h3>
+            <p>UYIR Road Safety Hackathon 2025. Awarded Certificate of Merit for ML-based safety solutions.</p>
           </div>
         </div>
 
         <div class="timeline-item">
-          <div class="timeline-marker"></div>
+          <span class="timeline-date">Dec 2024</span>
           <div class="timeline-content">
-            <h3 class="timeline-title">Hackathon Champion</h3>
-            <span class="timeline-period">04 Dec 2024</span>
-            <p class="timeline-description">
-              Secured FIRST PRIZE in the RVITM "Build Your Web" Hackathon. 
-              Developed the Community Connect Application showcasing full-stack development skills.
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <h3 class="timeline-title">PR Team Lead, E-Cell UVCE</h3>
-            <span class="timeline-period">Jul 2025 – Present</span>
-            <p class="timeline-description">
-              Promoted to lead Public Relations team, organizing events and managing external outreach. 
-              Responsible for marketing initiatives and community engagement programs.
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <h3 class="timeline-title">Summer Internship</h3>
-            <span class="timeline-period">Sep 2024</span>
-            <p class="timeline-description">
-              Completed Campus Champ Summer Internship - I Program (60 Hours). 
-              Gained practical experience in software development and project management.
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <h3 class="timeline-title">Entrepreneurial Success</h3>
-            <span class="timeline-period">Jan 2024</span>
-            <p class="timeline-description">
-              Led 12-member team for UVCE DTI Event, achieving 1.8x Return on Investment (ROI). 
-              Demonstrated leadership skills and business acumen in event management.
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <h3 class="timeline-title">E-Cell UVCE Member</h3>
-            <span class="timeline-period">Jan 2024</span>
-            <p class="timeline-description">
-              Joined E-Cell UVCE as a core team member, contributing to entrepreneurial initiatives 
-              and campus events. Organized and promoted various activities including "Becoming the Best You" by Ishaan Sharma.
-            </p>
+            <h3>Hackathon Winner</h3>
+            <p>1st Place at RVITM "Build Your Web" Hackathon. Built a full-stack community management platform.</p>
           </div>
         </div>
 
@@ -524,70 +165,24 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="section contact-section">
-    <div class="container">
-      <h2 class="section-title">Let's Connect</h2>
-      <div class="contact-content">
-        <div class="contact-info">
-          <h3 class="contact-subtitle">Ready to collaborate?</h3>
-          <p class="contact-description">
-            I'm always excited to discuss new opportunities, innovative projects, 
-            and potential collaborations. Let's build something amazing together!
-          </p>
-          <div class="contact-methods">
-            <a href="mailto:karthikey3608@gmail.com" class="contact-method">
-              <div class="contact-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                  <polyline points="22,6 12,13 2,6"/>
-                </svg>
-              </div>
-              <div class="contact-details">
-                <span class="contact-label">Email</span>
-                <span class="contact-value">karthikey3608@gmail.com</span>
-              </div>
-            </a>
-            
-            <a href="https://www.linkedin.com/in/karthikey-kadati" target="_blank" class="contact-method">
-              <div class="contact-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-              </div>
-              <div class="contact-details">
-                <span class="contact-label">LinkedIn</span>
-                <span class="contact-value">Karthikey Kadati</span>
-              </div>
-            </a>
-            
-            <a href="https://karthikey1.github.io/my-cv/" target="_blank" class="contact-method">
-              <div class="contact-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
-                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
-                </svg>
-              </div>
-              <div class="contact-details">
-                <span class="contact-label">Portfolio</span>
-                <span class="contact-value">View Live Portfolio</span>
-              </div>
-            </a>
-          </div>
-        </div>
+  <section id="contact" class="section">
+    <div class="container contact-container">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-links">
+        <a href="mailto:karthikey3608@gmail.com" class="contact-link">karthikey3608@gmail.com</a>
+        <a href="https://www.linkedin.com/in/karthikey-kadati" class="contact-link">LinkedIn</a>
+        <a href="https://github.com/Karthikey1" class="contact-link">GitHub</a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-content">
-        <p class="footer-text">&copy; 2025 Karthikey Kadati. All Rights Reserved.</p>
-        <p class="footer-subtext">Built with passion for innovation and excellence</p>
-      </div>
+      <p>&copy; 2026 Karthikey Kadati. Systems Programming.</p>
     </div>
   </footer>
 
   <script src="script.js"></script>
 </body>
+
 </html>
