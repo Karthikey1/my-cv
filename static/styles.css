@@ -1,0 +1,277 @@
+/* Soulful Systems Architect Theme */
+/* Optimized for readability, alignment, and raw engineering aesthetic */
+
+:root {
+    /* Deep OLED Grey */
+    --bg-primary: #050505;
+    --bg-secondary: #0a0a0a;
+
+    --text-primary: #e0e0e0;
+    --text-secondary: #888888;
+    --text-tertiary: #555555;
+
+    --accent: #d4d4d4;
+    --link-color: #ffffff;
+    --border-color: #222222;
+
+    /* Typography */
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', 'Roboto Mono', monospace;
+
+    --width-content: 1000px;
+}
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    padding: 0 1rem;
+}
+
+/* Typography Scale */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    color: var(--text-primary);
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.04em;
+}
+
+h2 {
+    font-size: 1.25rem;
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+}
+
+h2::before {
+    content: '#';
+    color: var(--text-tertiary);
+    margin-right: 0.5rem;
+    font-size: 1rem;
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    text-decoration-color: var(--text-tertiary);
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    text-decoration-color: var(--text-primary);
+    color: var(--text-primary);
+}
+
+/* Layout Utility */
+.layout-wrapper {
+    max-width: var(--width-content);
+    margin: 0 auto;
+    padding: 4rem 0;
+}
+
+/* Navigation */
+.nav-header {
+    margin-bottom: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    /* Allow wrapping on small screens */
+    gap: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-secondary);
+}
+
+.nav-links a:hover {
+    color: var(--text-primary);
+}
+
+/* Hero Section */
+.hero {
+    margin-bottom: 5rem;
+}
+
+.hero-sub {
+    font-family: var(--font-mono);
+    color: var(--text-tertiary);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.hero-bio {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 90%;
+}
+
+/* Tech Grid - Systems Style */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    margin-bottom: 3rem;
+}
+
+.tech-item {
+    border: 1px solid var(--border-color);
+    padding: 0.75rem 1rem;
+    color: var(--text-secondary);
+    transition: border-color 0.2s;
+}
+
+.tech-item:hover {
+    border-color: var(--text-secondary);
+    color: var(--text-primary);
+}
+
+/* Projects List - Clean */
+.project-item {
+    margin-bottom: 3rem;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.75rem;
+}
+
+.project-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.project-meta {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+    background: var(--bg-secondary);
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+}
+
+.project-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Timeline/Experience */
+.timeline-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.timeline-date {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+    text-align: right;
+    padding-top: 0.2rem;
+}
+
+.timeline-content h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.25rem;
+}
+
+.timeline-role {
+    font-size: 0.95rem;
+    color: var(--text-tertiary);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Footer */
+footer {
+    margin-top: 6rem;
+    padding-top: 2rem;
+    border-top: 1px dashed var(--border-color);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+    :root {
+        --width-content: 100%;
+    }
+
+    .tech-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .timeline-date {
+        text-align: left;
+    }
+}

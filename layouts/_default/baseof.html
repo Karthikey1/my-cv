@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Site.Title }} | {{ .Site.Params.description }}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/my-cv/styles.css">
+</head>
+
+<body>
+    <div class="layout-wrapper">
+        <header class="nav-header">
+            <div class="nav-logo">
+                <a href="{{ .Site.BaseURL }}"
+                    style="text-decoration: none; color: var(--text-primary); font-weight: 700;">{{ .Site.Title }}</a>
+            </div>
+            <nav class="nav-links">
+                <a href="/my-cv/about">About</a>
+                <a href="/my-cv/work">Work</a>
+                <a href="/my-cv/contact">Contact</a>
+                <a href="/my-cv/posts">Blog</a>
+            </nav>
+        </header>
+
+        <main>
+            {{ block "main" . }}{{ end }}
+        </main>
+
+        <footer>
+            <span>&copy; {{ now.Year }} {{ .Site.Params.author }}</span>
+            <span>ystems Programming</span>
+        </footer>
+    </div>
+
+    <script src="/my-cv/script.js"></script>
+</body>
+
+</html>

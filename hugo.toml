@@ -1,0 +1,13 @@
+baseURL = 'https://karthikey1.github.io/my-cv/'
+languageCode = 'en-us'
+title = 'Karthikey Kadati'
+theme = []
+
+[params]
+  description = "Linux Kernel Contributor | RTEMS Developer"
+  author = "Karthikey Kadati"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
