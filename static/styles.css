@@ -1,30 +1,30 @@
-/* Soulful Systems Architect Theme */
-/* Optimized for readability, alignment, and raw engineering aesthetic */
+/* Soulful Systems Architect Theme - v3 (Final) */
 
 :root {
     /* Deep OLED Grey */
     --bg-primary: #050505;
     --bg-secondary: #0a0a0a;
 
-    --text-primary: #e0e0e0;
-    --text-secondary: #888888;
-    --text-tertiary: #555555;
+    --text-primary: #f0f0f0;
+    --text-secondary: #999999;
+    --text-tertiary: #666666;
 
     --accent: #d4d4d4;
     --link-color: #ffffff;
-    --border-color: #222222;
+    --border-color: #333333;
 
     /* Typography */
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     --font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', 'Roboto Mono', monospace;
 
-    --width-content: 1000px;
+    /* Layout */
+    --width-content: 92vw; /* Wide layout for the container */
+    --max-text-width: 900px; /* Constrained width for reading text */
+    --max-width: 1600px; /* Cap for ultra-wide monitors */
 }
 
 /* Reset & Base */
-*,
-*::before,
-*::after {
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -40,101 +40,112 @@ body {
     color: var(--text-primary);
     font-family: var(--font-sans);
     font-weight: 400;
-    line-height: 1.7;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    padding: 0 1rem;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 /* Typography Scale */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-mono);
     font-weight: 500;
     color: var(--text-primary);
-    line-height: 1.3;
-    letter-spacing: -0.02em;
-}
-
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    line-height: 1.1;
     letter-spacing: -0.04em;
 }
 
-h2 {
-    font-size: 1.25rem;
-    margin-top: 4rem;
+/* --- THE NAME (Homepage Only) --- */
+.home-hero h1 {
+    font-size: 11vw; /* Scales with screen width */
+    font-weight: 600;
+    line-height: 0.9;
+    letter-spacing: -0.06em;
     margin-bottom: 1.5rem;
+    margin-left: -0.4vw;
+    text-transform: uppercase;
+}
+
+/* Standard Page Headers (Like "Blog") */
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    max-width: var(--max-text-width); /* Keeps "Blog" aligned with content */
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--border-color);
     color: var(--text-primary);
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 h2::before {
-    content: '#';
+    content: '//';
     color: var(--text-tertiary);
-    margin-right: 0.5rem;
+    margin-right: 0.75rem;
     font-size: 1rem;
+    font-family: var(--font-mono);
 }
 
-h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-}
+h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
 
 p {
     margin-bottom: 1.5rem;
     color: var(--text-secondary);
-    font-size: 1.05rem;
+    font-size: 1.1rem;
+    max-width: 65ch;
 }
 
 a {
     color: var(--link-color);
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 4px;
-    text-decoration-color: var(--text-tertiary);
+    text-decoration: none;
+    border-bottom: 1px solid var(--text-tertiary);
     transition: all 0.2s ease;
 }
 
 a:hover {
-    text-decoration-color: var(--text-primary);
+    border-bottom-color: var(--text-primary);
     color: var(--text-primary);
 }
 
 /* Layout Utility */
 .layout-wrapper {
-    max-width: var(--width-content);
+    width: var(--width-content);
+    max-width: var(--max-width);
     margin: 0 auto;
-    padding: 4rem 0;
+    padding: 3rem 0;
 }
 
 /* Navigation */
 .nav-header {
-    margin-bottom: 5rem;
+    margin-bottom: 6rem;
+    padding-top: 1rem;
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
-    flex-wrap: wrap;
-    /* Allow wrapping on small screens */
-    gap: 1rem;
+    align-items: center;
     font-family: var(--font-mono);
-    font-size: 0.9rem;
+    font-size: 1.15rem;
+}
+
+.nav-logo a {
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
 .nav-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 2.5rem;
 }
 
 .nav-links a {
     text-decoration: none;
+    border: none;
     color: var(--text-secondary);
 }
 
@@ -142,136 +153,176 @@ a:hover {
     color: var(--text-primary);
 }
 
-/* Hero Section */
+/* --- HERO SECTION --- */
+/* This was causing the void issue. Now it's flexible. */
 .hero {
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Auto height by default */
+}
+
+/* Special class for Homepage ONLY */
+.home-hero {
+    min-height: 60vh; 
+    margin-bottom: 6rem;
 }
 
 .hero-sub {
     font-family: var(--font-mono);
     color: var(--text-tertiary);
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    padding-left: 0.5rem;
+    border-left: 2px solid var(--border-color);
+    line-height: 1;
 }
 
 .hero-bio {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     color: var(--text-secondary);
-    max-width: 90%;
+    line-height: 1.6;
+    max-width: 700px;
 }
 
-/* Tech Grid - Systems Style */
+/* Tech Grid */
 .tech-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
     font-family: var(--font-mono);
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     margin-bottom: 3rem;
 }
 
 .tech-item {
     border: 1px solid var(--border-color);
-    padding: 0.75rem 1rem;
+    background: var(--bg-secondary);
+    padding: 1.5rem 1rem;
     color: var(--text-secondary);
-    transition: border-color 0.2s;
+    transition: all 0.2s;
+    text-align: center;
 }
 
 .tech-item:hover {
-    border-color: var(--text-secondary);
+    border-color: var(--text-primary);
     color: var(--text-primary);
+    background: #111;
+    transform: translateY(-2px);
 }
 
-/* Projects List - Clean */
+/* --- LISTS (Projects / Blog) --- */
 .project-item {
-    margin-bottom: 3rem;
+    max-width: var(--max-text-width); /* Fixes the "stretched to infinity" look */
+    margin-bottom: 4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.project-item:last-child {
+    border-bottom: none;
 }
 
 .project-header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .project-title {
-    font-size: 1.15rem;
+    font-size: 1.4rem;
     font-weight: 600;
-    text-decoration: none;
+    border: none;
 }
 
 .project-meta {
     font-family: var(--font-mono);
-    font-size: 0.8rem;
-    color: var(--text-tertiary);
-    background: var(--bg-secondary);
-    padding: 0.2rem 0.6rem;
-    border-radius: 2px;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    background: var(--border-color);
+    padding: 0.3rem 0.8rem;
 }
 
-.project-desc {
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-/* Timeline/Experience */
+/* Timeline */
 .timeline-item {
     display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    grid-template-columns: 180px 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    max-width: var(--max-text-width); /* Align with other content */
 }
 
 .timeline-date {
     font-family: var(--font-mono);
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     color: var(--text-tertiary);
     text-align: right;
-    padding-top: 0.2rem;
+    padding-top: 0.3rem;
+    border-right: 1px solid var(--border-color);
+    padding-right: 2rem;
 }
 
 .timeline-content h3 {
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     margin-bottom: 0.25rem;
 }
 
 .timeline-role {
-    font-size: 0.95rem;
-    color: var(--text-tertiary);
-    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
     display: block;
+    font-family: var(--font-mono);
 }
 
 /* Footer */
 footer {
-    margin-top: 6rem;
+    margin-top: 8rem;
     padding-top: 2rem;
-    border-top: 1px dashed var(--border-color);
+    border-top: 1px solid var(--border-color);
     font-family: var(--font-mono);
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: var(--text-tertiary);
     display: flex;
     justify-content: space-between;
 }
 
 /* Mobile */
-@media (max-width: 650px) {
+@media (max-width: 768px) {
     :root {
-        --width-content: 100%;
+        --width-content: 90vw;
+    }
+    
+    .home-hero h1 {
+        font-size: 15vw;
     }
 
-    .tech-grid {
-        grid-template-columns: 1fr 1fr;
+    .nav-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        margin-bottom: 4rem;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+        flex-wrap: wrap;
     }
 
     .timeline-item {
         grid-template-columns: 1fr;
-        gap: 0.5rem;
+        gap: 1rem;
     }
 
     .timeline-date {
         text-align: left;
+        border-right: none;
+        border-left: 1px solid var(--border-color);
+        padding-left: 1rem;
+        padding-right: 0;
     }
 }
