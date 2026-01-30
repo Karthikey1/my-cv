@@ -12,7 +12,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="/my-cv/styles.css">
+    <link rel="stylesheet" href="{{ `styles.css` | relURL }}">
 </head>
 
 <body>
@@ -22,10 +22,9 @@
                 <a href="{{ .Site.BaseURL }}" class="nav-logo-link">{{ .Site.Title }}</a>
             </div>
             <nav class="nav-links">
-                <a href="/my-cv/about">About</a>
-                <a href="/my-cv/work">Work</a>
-                <a href="/my-cv/contact">Contact</a>
-                <a href="/my-cv/posts">Posts</a>
+                {{ range .Site.Menus.main }}
+                <a href="{{ .URL }}">{{ .Name }}</a>
+                {{ end }}
             </nav>
         </header>
 
@@ -39,7 +38,7 @@
         </footer>
     </div>
 
-    <script src="/my-cv/script.js"></script>
+    <script src="{{ `script.js` | relURL }}"></script>
 </body>
 
 </html>
