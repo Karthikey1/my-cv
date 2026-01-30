@@ -11,9 +11,6 @@ theme = []
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
-
-relativeURLs = true
-canonifyURLs = true
 [menu]
   [[menu.main]]
     identifier = "home"
