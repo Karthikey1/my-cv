@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karthikey Kadati | Linux Kernel Contributor | RTEMS Developer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/my-cv/styles.css">
+</head>
+
+<body>
+    <div class="layout-wrapper">
+        <header class="nav-header">
+            <div class="nav-logo">
+                <a href="https://karthikey1.github.io/my-cv/" class="nav-logo-link">Karthikey Kadati</a>
+            </div>
+            <nav class="nav-links">
+                <a href="/my-cv/about">About</a>
+                <a href="/my-cv/work">Work</a>
+                <a href="/my-cv/contact">Contact</a>
+                <a href="/my-cv/posts">Posts</a>
+            </nav>
+        </header>
+
+        <main>
+            
+<article>
+    <header class="post-header">
+        <h1>Inside the Kernel: Architecting FMLP for RTEMS 7</h1>
+        <div class="post-date">
+            January 27, 2026
+        </div>
+    </header>
+
+    <div class="post-content">
+        <p>The goal was clear: Introduce the <strong>Flexible Multiprocessor Locking Protocol (FMLP)</strong> into the RTEMS 7 SMP SuperCore. But bridging the gap between a 2020 research patch and a 2026 production kernel required a massive architectural overhaul.</p>
+<h3 id="the-supercore-logic">The SuperCore Logic</h3>
+<p>I had to introduce two new control structures into <code>cpukit/score</code>:</p>
+<ul>
+<li><code>FMLPS_Control</code>: Manages the metadata for the <strong>Short</strong> (busy-wait) variant.</li>
+<li><code>FMLPL_Control</code>: Manages the state for the <strong>Long</strong> (suspension) variant.</li>
+</ul>
+<p>Unlike the research code which used ad-hoc locking, I aligned everything with the modern <code>Thread_queue_Context</code>. This ensures that every state transition - whether it is enqueuing a thread or handing off a lock - is atomic and SMP-safe across clustered configurations.</p>
+<h3 id="the-wait-discipline-strict-fifo">The Wait Discipline: Strict FIFO</h3>
+<p>Standard RTEMS queues are priority-sorted. But FMLP demands predictability. I implemented a <strong>FIFO wait-queue discipline</strong> for both variants.</p>
+<p>Why? In multiprocessor resource sharing, you often want to minimize the worst-case blocking time rather than greedily serving the highest priority. FIFO gives us those theoretical bounds.</p>
+<h3 id="api--observability">API &amp; Observability</h3>
+<p>It is not real if the user cannot see it.</p>
+<p><strong>Classic API</strong>: I extended the Semaphore Manager. Users can now explicitly select their locking protocol:</p>
+<ul>
+<li><code>RTEMS_FLEXIBLE_MULTIPROCESSOR_LOCKING_SHORT</code></li>
+<li><code>RTEMS_FLEXIBLE_MULTIPROCESSOR_LOCKING_LONG</code></li>
+</ul>
+<p><strong>Monitor</strong>: I patched <code>cpukit/libmisc/monitor/mon-sema.c</code>. Now, when you are debugging a system crash at 2 AM, the monitor will correctly identify and display these new semaphore types instead of showing &ldquo;Unknown&rdquo;.</p>
+<p>This was not just a port. It was a modernization.</p>
+
+    </div>
+</article>
+
+        </main>
+
+        <footer>
+            <span>&copy; 2026 Karthikey Kadati</span>
+            <span>Systems Programming</span>
+        </footer>
+    </div>
+
+    <script src="/my-cv/script.js"></script>
+</body>
+
+</html>

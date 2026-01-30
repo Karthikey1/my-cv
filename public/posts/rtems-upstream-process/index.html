@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karthikey Kadati | Linux Kernel Contributor | RTEMS Developer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/my-cv/styles.css">
+</head>
+
+<body>
+    <div class="layout-wrapper">
+        <header class="nav-header">
+            <div class="nav-logo">
+                <a href="https://karthikey1.github.io/my-cv/" class="nav-logo-link">Karthikey Kadati</a>
+            </div>
+            <nav class="nav-links">
+                <a href="/my-cv/about">About</a>
+                <a href="/my-cv/work">Work</a>
+                <a href="/my-cv/contact">Contact</a>
+                <a href="/my-cv/posts">Posts</a>
+            </nav>
+        </header>
+
+        <main>
+            
+<article>
+    <header class="post-header">
+        <h1>The Upstream Game: Refining the FMLP Port</h1>
+        <div class="post-date">
+            January 28, 2026
+        </div>
+    </header>
+
+    <div class="post-content">
+        <p>Writing code is easy. getting it merged is hard.</p>
+<p>After getting FMLP working, I faced the reality of upstreaming code to a major open-source project like RTEMS. The initial feedback on my Merge Request (!882) wasn&rsquo;t about the logic; it was about the <em>process</em>.</p>
+<h3 id="the-import-vs-port-dilemma">The &ldquo;Import vs. Port&rdquo; Dilemma</h3>
+<p>My first commit was a giant blob of changes. That is a rookie mistake.</p>
+<p>Reviewers pointed out that I needed to respect the history of the original research code. So, I split the work into two distinct commits:</p>
+<ol>
+<li><strong>The Import</strong>: Bringing in the original research findings from Junjie Shi et al. cleanly.</li>
+<li><strong>The Port</strong>: My specific adaptations for RTEMS 7 (the &ldquo;modernization&rdquo; logic).</li>
+</ol>
+<p>This structure allows maintainers to see exactly what I changed versus what was original research.</p>
+<h3 id="licensing--attribution">Licensing &amp; Attribution</h3>
+<p>You cannot just copy-paste code and call it a day. I spent hours verifying that the original research authorship and copyrights were preserved in every single file. Open source runs on credit.</p>
+<h3 id="the-final-polish">The Final Polish</h3>
+<p>I also had to clean house on formatting. Research code is notoriously messy with whitespace. I sanitized the core logic and test suites to meet the strict RTEMS coding standards.</p>
+<p>It is tedious work, but it is the difference between a &ldquo;hack&rdquo; and a &ldquo;product&rdquo;.</p>
+
+    </div>
+</article>
+
+        </main>
+
+        <footer>
+            <span>&copy; 2026 Karthikey Kadati</span>
+            <span>Systems Programming</span>
+        </footer>
+    </div>
+
+    <script src="/my-cv/script.js"></script>
+</body>
+
+</html>

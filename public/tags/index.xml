@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Karthikey Kadati</title>
+    <link>https://karthikey1.github.io/my-cv/tags/</link>
+    <description>Recent content in Tags on Karthikey Kadati</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 28 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://karthikey1.github.io/my-cv/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git</title>
+      <link>https://karthikey1.github.io/my-cv/tags/git/</link>
+      <pubDate>Wed, 28 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://karthikey1.github.io/my-cv/tags/git/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Licensing</title>
+      <link>https://karthikey1.github.io/my-cv/tags/licensing/</link>
+      <pubDate>Wed, 28 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://karthikey1.github.io/my-cv/tags/licensing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Open Source</title>
+      <link>https://karthikey1.github.io/my-cv/tags/open-source/</link>
+      <pubDate>Wed, 28 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://karthikey1.github.io/my-cv/tags/open-source/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>RTEMS</title>
+      <link>https://karthikey1.github.io/my-cv/tags/rtems/</link>
+      <pubDate>Wed, 28 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://karthikey1.github.io/my-cv/tags/rtems/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>C</title>
+      <link>https://karthikey1.github.io/my-cv/tags/c/</link>
+      <pubDate>Tue, 27 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://karthikey1.github.io/my-cv/tags/c/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kernel Hacking</title>
+      <link>https://karthikey1.github.io/my-cv/tags/kernel-hacking/</link>
+      <pubDate>Tue, 27 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://karthikey1.github.io/my-cv/tags/kernel-hacking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Real-time</title>
+      <link>https://karthikey1.github.io/my-cv/tags/real-time/</link>
+      <pubDate>Tue, 27 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://karthikey1.github.io/my-cv/tags/real-time/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SMP</title>
+      <link>https://karthikey1.github.io/my-cv/tags/smp/</link>
+      <pubDate>Tue, 27 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://karthikey1.github.io/my-cv/tags/smp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SuperCore</title>
+      <link>https://karthikey1.github.io/my-cv/tags/supercore/</link>
+      <pubDate>Tue, 27 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://karthikey1.github.io/my-cv/tags/supercore/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Testing</title>
+      <link>https://karthikey1.github.io/my-cv/tags/testing/</link>
+      <pubDate>Tue, 27 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://karthikey1.github.io/my-cv/tags/testing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Debugging</title>
+      <link>https://karthikey1.github.io/my-cv/tags/debugging/</link>
+      <pubDate>Tue, 20 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://karthikey1.github.io/my-cv/tags/debugging/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MrsP</title>
+      <link>https://karthikey1.github.io/my-cv/tags/mrsp/</link>
+      <pubDate>Tue, 20 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://karthikey1.github.io/my-cv/tags/mrsp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Concurrency</title>
+      <link>https://karthikey1.github.io/my-cv/tags/concurrency/</link>
+      <pubDate>Sun, 11 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://karthikey1.github.io/my-cv/tags/concurrency/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux Kernel</title>
+      <link>https://karthikey1.github.io/my-cv/tags/linux-kernel/</link>
+      <pubDate>Sun, 11 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://karthikey1.github.io/my-cv/tags/linux-kernel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Staging</title>
+      <link>https://karthikey1.github.io/my-cv/tags/staging/</link>
+      <pubDate>Sun, 11 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://karthikey1.github.io/my-cv/tags/staging/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Karthikey Kadati</title>
+    <link>https://karthikey1.github.io/my-cv/</link>
+    <description>Recent content on Karthikey Kadati</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 28 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://karthikey1.github.io/my-cv/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Upstream Game: Refining the FMLP Port</title>
+      <link>https://karthikey1.github.io/my-cv/posts/rtems-upstream-process/</link>
+      <pubDate>Wed, 28 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://karthikey1.github.io/my-cv/posts/rtems-upstream-process/</guid>
+      <description>Writing code is easy. getting it merged is hard.&#xA;After getting FMLP working, I faced the reality of upstreaming code to a major open-source project like RTEMS. The initial feedback on my Merge Request (!882) wasn&amp;rsquo;t about the logic; it was about the process.&#xA;The &amp;ldquo;Import vs. Port&amp;rdquo; Dilemma My first commit was a giant blob of changes. That is a rookie mistake.&#xA;Reviewers pointed out that I needed to respect the history of the original research code.</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>https://karthikey1.github.io/my-cv/about/</link>
+      <pubDate>Tue, 27 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://karthikey1.github.io/my-cv/about/</guid>
+      <description>I am a Systems Programmer and Information Science student at UVCE. My passion lies in digging deep into how software interacts with hardware. I don&#39;t just write code; I care about memory models, CPU scheduling, and kernel synchronization. Currently, I am actively contributing to the Linux Kernel (staging drivers) and porting synchronization protocols to RTEMS. My goal is to engineer robust, real-time systems that power critical infrastructure. Timeline Present B.</description>
+    </item>
+    <item>
+      <title>Breaking the Scheduler: Validating FMLP for GSoC 2026 (Part 2)</title>
+      <link>https://karthikey1.github.io/my-cv/posts/fmlp-rtems-validation/</link>
+      <pubDate>Tue, 27 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://karthikey1.github.io/my-cv/posts/fmlp-rtems-validation/</guid>
+      <description>In the last post, I talked about how I modernized the FMLP implementation. But writing the code is only half the battle. Maintainers like Gedare Bloom and Joel Sherrill demanded proof that my changes didn&amp;rsquo;t break the math.&#xA;Validation Strategy: Beyond &amp;ldquo;It Works&amp;rdquo; I couldn&amp;rsquo;t just run a &amp;ldquo;happy path&amp;rdquo; test. I had to build a suite that actively tried to break the scheduler.&#xA;spfmlp01: Validates the Long (suspension) variant. spfmlp02: Validates the Short (busy-wait) variant.</description>
+    </item>
+    <item>
+      <title>Contact</title>
+      <link>https://karthikey1.github.io/my-cv/contact/</link>
+      <pubDate>Tue, 27 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://karthikey1.github.io/my-cv/contact/</guid>
+      <description> I am always open to discussing operating systems, real-time kernels, and open-source collaboration. Email:&#xA;karthikey3608@gmail.com GitHub:&#xA;github.com/Karthikey1 LinkedIn:&#xA;linkedin.com/in/karthikey-kadati RTEMS GitLab:&#xA;gitlab.rtems.org/karthikey_kadati RTEMS Discourse:&#xA;users.rtems.org/u/karthikey_kadati </description>
+    </item>
+    <item>
+      <title>Inside the Kernel: Architecting FMLP for RTEMS 7</title>
+      <link>https://karthikey1.github.io/my-cv/posts/fmlp-rtems-implementation/</link>
+      <pubDate>Tue, 27 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://karthikey1.github.io/my-cv/posts/fmlp-rtems-implementation/</guid>
+      <description>The goal was clear: Introduce the Flexible Multiprocessor Locking Protocol (FMLP) into the RTEMS 7 SMP SuperCore. But bridging the gap between a 2020 research patch and a 2026 production kernel required a massive architectural overhaul.&#xA;The SuperCore Logic I had to introduce two new control structures into cpukit/score:&#xA;FMLPS_Control: Manages the metadata for the Short (busy-wait) variant. FMLPL_Control: Manages the state for the Long (suspension) variant. Unlike the research code which used ad-hoc locking, I aligned everything with the modern Thread_queue_Context.</description>
+    </item>
+    <item>
+      <title>Work</title>
+      <link>https://karthikey1.github.io/my-cv/work/</link>
+      <pubDate>Tue, 27 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://karthikey1.github.io/my-cv/work/</guid>
+      <description>A selection of my engineering work in kernel development, real-time systems, and lower-level infrastructure. FMLP Implementation for RTEMS ↗ C / RTEMS Kernel Ported the Flexible Multiprocessor Locking Protocol (FMLP) to RTEMS 7. implemented spin-based and suspension-based locking for SMP real-time systems. Linux Staging: Race Condition Fix ↗ C / Linux Kernel Fixed a critical race condition in the rtl8723bs driver where security and PHY info updates were non-atomic. Hardened the transmission path by implementing proper locking.</description>
+    </item>
+    <item>
+      <title>How I Crashed RTEMS: The MrsP Experiment</title>
+      <link>https://karthikey1.github.io/my-cv/posts/rtems-mrsp-experiment/</link>
+      <pubDate>Tue, 20 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://karthikey1.github.io/my-cv/posts/rtems-mrsp-experiment/</guid>
+      <description>Before I could even think about implementing FMLP, I had to understand the beast I was dealing with. The RTEMS 7 SMP SuperCore is strict. Very strict.&#xA;I decided to start with a &amp;ldquo;simple&amp;rdquo; homework assignment: Verify the existing Multiprocessor Resource Sharing Protocol (MrsP) implementation using the smpmrsp01 test suite on the SIS/Leon3 simulator.&#xA;The Experiment I wanted to see what happens when you break the rules. I modified the init.</description>
+    </item>
+    <item>
+      <title>Fixing a Race Condition in the rtl8723bs Driver</title>
+      <link>https://karthikey1.github.io/my-cv/posts/linux-kernel-rtl8723bs-fix/</link>
+      <pubDate>Sun, 11 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://karthikey1.github.io/my-cv/posts/linux-kernel-rtl8723bs-fix/</guid>
+      <description>I was digging through the drivers/staging/rtl8723bs code when I spotted something off in the packet transmission path.&#xA;The function update_attrib updates two critical things for a network station: security info and physical layer attributes. But looking at the code, these updates were happening completely unprotected.&#xA;/* Before Fix */ if (update_attrib_sec_info(padapter, pattrib, psta) == _FAIL) { res = _FAIL; goto exit; } // &amp;lt;--- A lot can happen here in an SMP system update_attrib_phy_info(padapter, pattrib, psta); pattrib-&amp;gt;psta = psta; In a multi-core system, if another thread tries to read the station state right in the middle of this, it gets garbage data.</description>
+    </item>
+  </channel>
+</rss>

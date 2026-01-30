@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karthikey Kadati | Linux Kernel Contributor | RTEMS Developer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/my-cv/styles.css">
+</head>
+
+<body>
+    <div class="layout-wrapper">
+        <header class="nav-header">
+            <div class="nav-logo">
+                <a href="https://karthikey1.github.io/my-cv/" class="nav-logo-link">Karthikey Kadati</a>
+            </div>
+            <nav class="nav-links">
+                <a href="/my-cv/about">About</a>
+                <a href="/my-cv/work">Work</a>
+                <a href="/my-cv/contact">Contact</a>
+                <a href="/my-cv/posts">Posts</a>
+            </nav>
+        </header>
+
+        <main>
+            
+<article>
+    <header class="post-header">
+        <h1>Fixing a Race Condition in the rtl8723bs Driver</h1>
+        <div class="post-date">
+            January 11, 2026
+        </div>
+    </header>
+
+    <div class="post-content">
+        <p>I was digging through the <code>drivers/staging/rtl8723bs</code> code when I spotted something off in the packet transmission path.</p>
+<p>The function <code>update_attrib</code> updates two critical things for a network station: security info and physical layer attributes. But looking at the code, these updates were happening completely unprotected.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">/* Before Fix */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">update_attrib_sec_info</span>(padapter, pattrib, psta) <span style="color:#f92672">==</span> _FAIL) {
+</span></span><span style="display:flex;"><span>    res <span style="color:#f92672">=</span> _FAIL;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">goto</span> exit;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// &lt;--- A lot can happen here in an SMP system
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">update_attrib_phy_info</span>(padapter, pattrib, psta); 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pattrib<span style="color:#f92672">-&gt;</span>psta <span style="color:#f92672">=</span> psta;
+</span></span></code></pre></div><p>In a multi-core system, if another thread tries to read the station state right in the middle of this, it gets garbage data. The security info might be new, but the PHY info is old. That&rsquo;s a classic race condition waiting to happen.</p>
+<p>I fixed it by forcing the updates to be atomic using the driver&rsquo;s spinlock.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">/* After Fix */</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spin_lock_bh</span>(<span style="color:#f92672">&amp;</span>psta<span style="color:#f92672">-&gt;</span>lock);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">update_attrib_sec_info</span>(padapter, pattrib, psta) <span style="color:#f92672">==</span> _FAIL) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">spin_unlock_bh</span>(<span style="color:#f92672">&amp;</span>psta<span style="color:#f92672">-&gt;</span>lock);
+</span></span><span style="display:flex;"><span>    res <span style="color:#f92672">=</span> _FAIL;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">goto</span> exit;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">update_attrib_phy_info</span>(padapter, pattrib, psta);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pattrib<span style="color:#f92672">-&gt;</span>psta <span style="color:#f92672">=</span> psta;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spin_unlock_bh</span>(<span style="color:#f92672">&amp;</span>psta<span style="color:#f92672">-&gt;</span>lock);
+</span></span></code></pre></div><p>Used <code>spin_lock_bh</code> to disable bottom halves on the local CPU, just to be safe against softirqs. Now the station is either fully updated or not touched at all. No more half-baked state.</p>
+
+    </div>
+</article>
+
+        </main>
+
+        <footer>
+            <span>&copy; 2026 Karthikey Kadati</span>
+            <span>Systems Programming</span>
+        </footer>
+    </div>
+
+    <script src="/my-cv/script.js"></script>
+</body>
+
+</html>

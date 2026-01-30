@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kernel Hacking on Karthikey Kadati</title>
+    <link>https://karthikey1.github.io/my-cv/tags/kernel-hacking/</link>
+    <description>Recent content in Kernel Hacking on Karthikey Kadati</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 27 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://karthikey1.github.io/my-cv/tags/kernel-hacking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Inside the Kernel: Architecting FMLP for RTEMS 7</title>
+      <link>https://karthikey1.github.io/my-cv/posts/fmlp-rtems-implementation/</link>
+      <pubDate>Tue, 27 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://karthikey1.github.io/my-cv/posts/fmlp-rtems-implementation/</guid>
+      <description>The goal was clear: Introduce the Flexible Multiprocessor Locking Protocol (FMLP) into the RTEMS 7 SMP SuperCore. But bridging the gap between a 2020 research patch and a 2026 production kernel required a massive architectural overhaul.&#xA;The SuperCore Logic I had to introduce two new control structures into cpukit/score:&#xA;FMLPS_Control: Manages the metadata for the Short (busy-wait) variant. FMLPL_Control: Manages the state for the Long (suspension) variant. Unlike the research code which used ad-hoc locking, I aligned everything with the modern Thread_queue_Context.</description>
+    </item>
+  </channel>
+</rss>

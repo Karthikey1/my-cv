@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karthikey Kadati | Linux Kernel Contributor | RTEMS Developer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/my-cv/styles.css">
+</head>
+
+<body>
+    <div class="layout-wrapper">
+        <header class="nav-header">
+            <div class="nav-logo">
+                <a href="https://karthikey1.github.io/my-cv/" class="nav-logo-link">Karthikey Kadati</a>
+            </div>
+            <nav class="nav-links">
+                <a href="/my-cv/about">About</a>
+                <a href="/my-cv/work">Work</a>
+                <a href="/my-cv/contact">Contact</a>
+                <a href="/my-cv/posts">Posts</a>
+            </nav>
+        </header>
+
+        <main>
+            
+<article>
+    <header class="post-header">
+        <h1>How I Crashed RTEMS: The MrsP Experiment</h1>
+        <div class="post-date">
+            January 20, 2026
+        </div>
+    </header>
+
+    <div class="post-content">
+        <p>Before I could even think about implementing FMLP, I had to understand the beast I was dealing with. The RTEMS 7 SMP SuperCore is strict. Very strict.</p>
+<p>I decided to start with a &ldquo;simple&rdquo; homework assignment: Verify the existing <strong>Multiprocessor Resource Sharing Protocol (MrsP)</strong> implementation using the <code>smpmrsp01</code> test suite on the SIS/Leon3 simulator.</p>
+<h3 id="the-experiment">The Experiment</h3>
+<p>I wanted to see what happens when you break the rules. I modified the <code>init.c</code> taskset to intentionally misconfigure the priorities:</p>
+<ul>
+<li><strong>Main Task Priority</strong>: Set to 1 (Very High).</li>
+<li><strong>MrsP Ceiling</strong>: Set to 5 (Lower).</li>
+</ul>
+<h3 id="the-crash">The Crash</h3>
+<p>The result was immediate and violent.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>fatal error: assertion failed: 
+</span></span><span style="display:flex;"><span>mrsp_obtain_and_release_with_help: line 1411
+</span></span></code></pre></div><p>A terminal assertion failure. The kernel didn&rsquo;t just warn me; it panicked.</p>
+<h3 id="the-lesson">The Lesson</h3>
+<p>Digging into the switch logs, I realized this wasn&rsquo;t just a bug. It was a feature. RTEMS 7 monitors task-to-processor affinity and priority elevation with an iron fist. The mismatch I created violated the fundamental invariants of the MrsP protocol.</p>
+<p>This failure was the best thing that could have happened. It forced me to dive deep into <code>Thread_queue</code> and <code>ISR_Lock</code> primitives before I wrote a single line of FMLP code. You can&rsquo;t misuse the SuperCore and get away with it.</p>
+
+    </div>
+</article>
+
+        </main>
+
+        <footer>
+            <span>&copy; 2026 Karthikey Kadati</span>
+            <span>Systems Programming</span>
+        </footer>
+    </div>
+
+    <script src="/my-cv/script.js"></script>
+</body>
+
+</html>

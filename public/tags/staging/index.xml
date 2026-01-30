@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Staging on Karthikey Kadati</title>
+    <link>https://karthikey1.github.io/my-cv/tags/staging/</link>
+    <description>Recent content in Staging on Karthikey Kadati</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 11 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://karthikey1.github.io/my-cv/tags/staging/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fixing a Race Condition in the rtl8723bs Driver</title>
+      <link>https://karthikey1.github.io/my-cv/posts/linux-kernel-rtl8723bs-fix/</link>
+      <pubDate>Sun, 11 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://karthikey1.github.io/my-cv/posts/linux-kernel-rtl8723bs-fix/</guid>
+      <description>I was digging through the drivers/staging/rtl8723bs code when I spotted something off in the packet transmission path.&#xA;The function update_attrib updates two critical things for a network station: security info and physical layer attributes. But looking at the code, these updates were happening completely unprotected.&#xA;/* Before Fix */ if (update_attrib_sec_info(padapter, pattrib, psta) == _FAIL) { res = _FAIL; goto exit; } // &amp;lt;--- A lot can happen here in an SMP system update_attrib_phy_info(padapter, pattrib, psta); pattrib-&amp;gt;psta = psta; In a multi-core system, if another thread tries to read the station state right in the middle of this, it gets garbage data.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,32 @@
+{{ define "main" }}
+
+<section id="about" class="hero home-hero">
+    <h1>{{ .Site.Params.author }}</h1>
+    <div class="hero-sub">{{ .Site.Params.description }}</div>
+    <p class="hero-bio">
+        I am a systems programmer specializing in operating system internals, real-time kernels (RTEMS), and embedded
+        development.
+        I contribute to the Linux Kernel staging drivers and focus on low-level optimization, driver development, and
+        synchronization primitives.
+    </p>
+</section>
+
+<section id="stack" class="section-stack">
+    <h2>Stack</h2>
+    <div class="tech-grid">
+        <div class="tech-item">C / Assembly</div>
+        <div class="tech-item">Linux Kernel Mode</div>
+        <div class="tech-item">RTEMS Real-Time</div>
+        <div class="tech-item">Concurrency/SMP</div>
+        <div class="tech-item">Device Drivers</div>
+        <div class="tech-item">Git / Workflows</div>
+    </div>
+</section>
+
+<section>
+    <p>
+        <a href="/my-cv/work">View Engineering Work →</a>
+    </p>
+</section>
+
+{{ end }}

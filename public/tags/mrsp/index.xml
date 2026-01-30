@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MrsP on Karthikey Kadati</title>
+    <link>https://karthikey1.github.io/my-cv/tags/mrsp/</link>
+    <description>Recent content in MrsP on Karthikey Kadati</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 20 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://karthikey1.github.io/my-cv/tags/mrsp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How I Crashed RTEMS: The MrsP Experiment</title>
+      <link>https://karthikey1.github.io/my-cv/posts/rtems-mrsp-experiment/</link>
+      <pubDate>Tue, 20 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://karthikey1.github.io/my-cv/posts/rtems-mrsp-experiment/</guid>
+      <description>Before I could even think about implementing FMLP, I had to understand the beast I was dealing with. The RTEMS 7 SMP SuperCore is strict. Very strict.&#xA;I decided to start with a &amp;ldquo;simple&amp;rdquo; homework assignment: Verify the existing Multiprocessor Resource Sharing Protocol (MrsP) implementation using the smpmrsp01 test suite on the SIS/Leon3 simulator.&#xA;The Experiment I wanted to see what happens when you break the rules. I modified the init.</description>
+    </item>
+  </channel>
+</rss>

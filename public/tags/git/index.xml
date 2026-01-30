@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on Karthikey Kadati</title>
+    <link>https://karthikey1.github.io/my-cv/tags/git/</link>
+    <description>Recent content in Git on Karthikey Kadati</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 28 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://karthikey1.github.io/my-cv/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Upstream Game: Refining the FMLP Port</title>
+      <link>https://karthikey1.github.io/my-cv/posts/rtems-upstream-process/</link>
+      <pubDate>Wed, 28 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://karthikey1.github.io/my-cv/posts/rtems-upstream-process/</guid>
+      <description>Writing code is easy. getting it merged is hard.&#xA;After getting FMLP working, I faced the reality of upstreaming code to a major open-source project like RTEMS. The initial feedback on my Merge Request (!882) wasn&amp;rsquo;t about the logic; it was about the process.&#xA;The &amp;ldquo;Import vs. Port&amp;rdquo; Dilemma My first commit was a giant blob of changes. That is a rookie mistake.&#xA;Reviewers pointed out that I needed to respect the history of the original research code.</description>
+    </item>
+  </channel>
+</rss>
