@@ -5,12 +5,17 @@
     --bg-primary: #050505;
     --bg-secondary: #0a0a0a;
 
-    --text-primary: #f0f0f0;
-    --text-secondary: #999999;
-    --text-tertiary: #666666;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --text-tertiary: #888888;
 
-    --accent: #d4d4d4;
-    --link-color: #ffffff;
+    /* Vibrant Palette */
+    --accent-pink: #ff007f;
+    --accent-blue: #00ffff;
+    --accent-purple: #bd00ff;
+    --accent-green: #00ff9d;
+    --accent-gold: #e77a90;
+    --link-color: #00ffff;
     --border-color: #333333;
 
     /* Typography */
@@ -18,13 +23,18 @@
     --font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', 'Roboto Mono', monospace;
 
     /* Layout */
-    --width-content: 92vw; /* Wide layout for the container */
-    --max-text-width: 900px; /* Constrained width for reading text */
-    --max-width: 1600px; /* Cap for ultra-wide monitors */
+    --width-content: 92vw;
+    /* Wide layout for the container */
+    --max-text-width: 900px;
+    /* Constrained width for reading text */
+    --max-width: 1600px;
+    /* Cap for ultra-wide monitors */
 }
 
 /* Reset & Base */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -47,7 +57,12 @@ body {
 }
 
 /* Typography Scale */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-mono);
     font-weight: 500;
     color: var(--text-primary);
@@ -55,14 +70,25 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.04em;
 }
 
+h1 {
+    color: var(--accent-pink);
+}
+
+h2 {
+    color: var(--accent-blue);
+}
+
+h3 {
+    color: var(--accent-green);
+}
+
 /* --- THE NAME (Homepage Only) --- */
 .home-hero h1 {
-    font-size: 11vw; /* Scales with screen width */
+    font-size: 3rem;
     font-weight: 600;
-    line-height: 0.9;
-    letter-spacing: -0.06em;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
     margin-bottom: 1.5rem;
-    margin-left: -0.4vw;
     text-transform: uppercase;
 }
 
@@ -70,7 +96,8 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    max-width: var(--max-text-width); /* Keeps "Blog" aligned with content */
+    max-width: var(--max-text-width);
+    /* Keeps "Blog" aligned with content */
 }
 
 h2 {
@@ -86,19 +113,25 @@ h2 {
 }
 
 h2::before {
-    content: '//';
-    color: var(--text-tertiary);
+    content: '> ';
+    color: var(--accent-pink);
     margin-right: 0.75rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-family: var(--font-mono);
+    font-weight: bold;
 }
 
-h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
 
 p {
     margin-bottom: 1.5rem;
     color: var(--text-secondary);
-    font-size: 1.1rem;
+    font-size: 1.35rem;
+    /* Increased size */
+    line-height: 1.7;
     max-width: 65ch;
 }
 
@@ -165,7 +198,7 @@ a:hover {
 
 /* Special class for Homepage ONLY */
 .home-hero {
-    min-height: 60vh; 
+    min-height: 60vh;
     margin-bottom: 6rem;
 }
 
@@ -214,7 +247,8 @@ a:hover {
 
 /* --- LISTS (Projects / Blog) --- */
 .project-item {
-    max-width: var(--max-text-width); /* Fixes the "stretched to infinity" look */
+    max-width: var(--max-text-width);
+    /* Fixes the "stretched to infinity" look */
     margin-bottom: 4rem;
     padding-bottom: 2rem;
     border-bottom: 1px dashed var(--border-color);
@@ -253,7 +287,8 @@ a:hover {
     grid-template-columns: 180px 1fr;
     gap: 3rem;
     margin-bottom: 3rem;
-    max-width: var(--max-text-width); /* Align with other content */
+    max-width: var(--max-text-width);
+    /* Align with other content */
 }
 
 .timeline-date {
@@ -296,9 +331,9 @@ footer {
     :root {
         --width-content: 90vw;
     }
-    
+
     .home-hero h1 {
-        font-size: 15vw;
+        font-size: 2.5rem;
     }
 
     .nav-header {
@@ -326,3 +361,85 @@ footer {
         padding-right: 0;
     }
 }
+
+
+
+
+/* Refactored Inline Styles */
+.nav-logo-link {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.section-stack {
+    margin-bottom: 4rem;
+}
+
+.post-header {
+    margin-bottom: 3rem;
+}
+
+.post-date {
+    font-family: var(--font-mono);
+    color: var(--text-tertiary);
+    margin-top: 0.5rem;
+}
+
+.post-content {
+
+    /* Typography Spacing Fixes */
+    h2 {
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 0.5rem;
+        color: var(--accent-blue);
+    }
+
+    h3 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+        color: var(--accent-green);
+    }
+
+    p {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--text-secondary);
+    }
+
+    ul,
+    ol {
+        margin-bottom: 2rem;
+        margin-left: 1.5rem;
+        color: var(--text-secondary);
+    }
+
+    li {
+        margin-bottom: 0.5rem;
+        line-height: 1.6;
+    }
+
+    /* Code Blocks */
+    pre,
+    code {
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    pre {
+        padding: 1rem;
+        background: var(--bg-secondary);
+        border: 1px solid var(--accent-gold);
+        overflow-x: auto;
+        margin-bottom: 2rem;
+        max-width: 85ch;
+        /* Wider to prevent cutoff */
+        border-radius: 4px;
+        /* Slight rounding for elegance */
+    }

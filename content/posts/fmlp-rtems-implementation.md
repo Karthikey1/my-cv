@@ -1,56 +1,35 @@
 ---
-title: "Implemeting the Flexible Multiprocessor Locking Protocol (FMLP) in RTEMS"
+title: "Inside the Kernel: Architecting FMLP for RTEMS 7"
 date: 2026-01-27
 draft: false
-tags: ["RTEMS", "Real-time", "C", "SMP"]
+tags: ["RTEMS", "Kernel Hacking", "C", "SuperCore"]
 layout: "single"
 ---
 
-Real-time systems running on Symmetric Multiprocessing (SMP) architectures face a unique challenge: resource sharing. If a high-priority task gets blocked by a lower-priority task holding a shared resource, specifically across different processors, we enter the dangerous territory of priority inversion. 
+The goal was clear: Introduce the **Flexible Multiprocessor Locking Protocol (FMLP)** into the RTEMS 7 SMP SuperCore. But bridging the gap between a 2020 research patch and a 2026 production kernel required a massive architectural overhaul.
 
-In my recent work contributing to the **RTEMS** kernel, I focused on implementing the **Flexible Multiprocessor Locking Protocol (FMLP)**, a sophisticated protocol designed to mitigate these issues more effectively than traditional inheritance protocols.
+### The SuperCore Logic
 
-### The Problem FMLP Solves
+I had to introduce two new control structures into `cpukit/score`:
+*   `FMLPS_Control`: Manages the metadata for the **Short** (busy-wait) variant.
+*   `FMLPL_Control`: Manages the state for the **Long** (suspension) variant.
 
-Standard Priority Inheritance Protocols (PIP) work well on uniprocessors but struggle in SMP environments due to the cost of migration and remote blocking. FMLP introduces a hybrid approach:
+Unlike the research code which used ad-hoc locking, I aligned everything with the modern `Thread_queue_Context`. This ensures that every state transition - whether it is enqueuing a thread or handing off a lock - is atomic and SMP-safe across clustered configurations.
 
-1.  **Short Critical Sections**: If a resource is held by a task on another processor, and the critical section is known to be short, the waiting task should *busy-wait* (spin). This avoids the overhead of context switching.
-2.  **Long Critical Sections**: For longer durations, the waiting task should block (suspend), allowing the processor to execute other work.
+### The Wait Discipline: Strict FIFO
 
-### My Implementation Strategy
+Standard RTEMS queues are priority-sorted. But FMLP demands predictability. I implemented a **FIFO wait-queue discipline** for both variants.
 
-Integrating this into `cpukit/score/src` required touching the core synchronization primitives of RTEMS.
+Why? In multiprocessor resource sharing, you often want to minimize the worst-case blocking time rather than greedily serving the highest priority. FIFO gives us those theoretical bounds.
 
-#### 1. FMLP-Short (Spinning)
-For the short variant, I implemented a FIFO-ordered spinlock mechanism. When a task contends for a resource:
-*   It joins a detailed FIFO queue.
-*   It spins non-preemptively. 
-*   Crucially, the task holding the lock is *priority boosted* to the highest priority among all contention tasks to accelerate release.
+### API & Observability
 
-```c
-// Simplified snippet of the locking logic
-void _FMLP_Obtain( Resource *resource ) {
-    ISR_Level level;
-    _ISR_Local_disable( level );
-    
-    if ( resource->owner == NULL ) {
-        resource->owner = _Thread_Executing;
-    } else {
-        // Enqueue in FIFO order and spin
-        _FMLP_Spin_wait( resource );
-    }
-    
-    _ISR_Local_enable( level );
-}
-```
+It is not real if the user cannot see it.
 
-#### 2. FMLP-Long (Suspension)
-The long variant was trickier. It involves:
-*   **Priority Inheritance**: The lock holder inherits the priority of the highest-priority blocked task.
-*   **Group Locking**: Grouping resources to prevent deadlock.
+**Classic API**: I extended the Semaphore Manager. Users can now explicitly select their locking protocol:
+*   `RTEMS_FLEXIBLE_MULTIPROCESSOR_LOCKING_SHORT`
+*   `RTEMS_FLEXIBLE_MULTIPROCESSOR_LOCKING_LONG`
 
-I benchmarked this using the **RTEMS Testsuite (tmtests)** on a QEMU-emulated SPARC Leon3 dual-core setup. The FMLP-Short variant showed a **40% reduction in average blocking time** for highly contended, short generic resources compared to the default MrsP (Multiprocessor Resource Sharing Protocol).
+**Monitor**: I patched `cpukit/libmisc/monitor/mon-sema.c`. Now, when you are debugging a system crash at 2 AM, the monitor will correctly identify and display these new semaphore types instead of showing "Unknown".
 
-### Future Optimization
-
-The next step is formally verifying the deadlock-freedom property using model checking. I am also working on upstreaming these patches to the RTEMS `master` branch.
+This was not just a port. It was a modernization.

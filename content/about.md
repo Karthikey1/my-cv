@@ -17,6 +17,8 @@ layout: "single"
     </p>
 </section>
 
+
+
 <section id="experience">
     <h2>Timeline</h2>
     
@@ -25,7 +27,7 @@ layout: "single"
         <div class="timeline-content">
             <h3>B.Tech, Information Science & Engineering</h3>
             <span class="timeline-role">University Visvesvaraya College of Engineering (UVCE)</span>
-            <p style="margin-top: 0.5rem; font-size: 0.9rem;">GPA: 8.72. Focusing on Operating Systems, Computer Architecture, and Embedded Systems.</p>
+            <p style="margin-top: 0.5rem; font-size: 1.1rem; color: var(--text-secondary);">GPA: 8.72. Focusing on Operating Systems, Computer Architecture, and Embedded Systems.</p>
         </div>
     </div>
 
@@ -34,7 +36,7 @@ layout: "single"
         <div class="timeline-content">
             <h3>National Hackathon Finalist</h3>
             <span class="timeline-role">UYIR Road Safety Hackathon 2025</span>
-            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Recognized for developing an AI-powered accident prediction model using TensorFlow.</p>
+            <p style="margin-top: 0.5rem; font-size: 1.1rem; color: var(--text-secondary);">Recognized for developing an AI-powered accident prediction model using TensorFlow.</p>
         </div>
     </div>
 
@@ -43,7 +45,7 @@ layout: "single"
         <div class="timeline-content">
             <h3>1st Place Winner</h3>
             <span class="timeline-role">RVITM "Build Your Web" Hackathon</span>
-            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Built a full-stack community platform. Handled backend architecture and database design.</p>
+            <p style="margin-top: 0.5rem; font-size: 1.1rem; color: var(--text-secondary);">Built a full-stack community platform. Handled backend architecture and database design.</p>
         </div>
     </div>
 

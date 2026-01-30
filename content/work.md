@@ -13,48 +13,24 @@ layout: "single"
 
     <div class="project-item">
         <div class="project-header">
-            <a href="#" class="project-title">FMLP Implementation for RTEMS</a>
+            <a href="https://gitlab.rtems.org/rtems/rtos/rtems/-/merge_requests/882" class="project-title" target="_blank">FMLP Implementation for RTEMS <span style="font-size: 0.8em; color: var(--text-tertiary);">↗</span></a>
             <span class="project-meta">C / RTEMS Kernel</span>
         </div>
         <p class="project-desc">
-            Implemented the Flexible Multiprocessor Locking Protocol (FMLP) for the RTEMS SMP environment. 
-            Developed FMLP-Short (spin-based) and FMLP-Long (suspension-based) mechanisms utilizing atomic primitives to optimize resource sharing in multi-core real-time systems.
-            This work involved deep understanding of the RTEMS scheduler and locking primitives.
+            Ported the Flexible Multiprocessor Locking Protocol (FMLP) to RTEMS 7. implemented spin-based and suspension-based locking for SMP real-time systems.
         </p>
     </div>
 
     <div class="project-item">
         <div class="project-header">
-            <a href="https://git.kernel.org" class="project-title">Linux Kernel Atomisp Driver Refactor</a>
-            <span class="project-meta">C / Linux Staging</span>
+            <a href="https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/staging.git/commit/?id=44b225bf0738e7b0644be1cc638871e930ffe1e5" class="project-title" target="_blank">Linux Staging: Race Condition Fix <span style="font-size: 0.8em; color: var(--text-tertiary);">↗</span></a>
+            <span class="project-meta">C / Linux Kernel</span>
         </div>
         <p class="project-desc">
-            Active contributor to the Linux Kernel staging tree, specifically the Atomisp camera driver.
-            Refactored legacy code, fixed coding style violations (checkpatch), optimized memory handling, and resolved sparse static analysis warnings.
-            My patches have been accepted into the mainline kernel.
+            Fixed a critical race condition in the <code>rtl8723bs</code> driver where security and PHY info updates were non-atomic. Hardened the transmission path by implementing proper locking.
         </p>
     </div>
 
-    <div class="project-item">
-        <div class="project-header">
-            <a href="#" class="project-title">Custom Memory Allocator</a>
-            <span class="project-meta">C / System Internals</span>
-        </div>
-        <p class="project-desc">
-            Designed and implemented a custom <code>malloc</code>/<code>free</code> replacement in C using a doubly linked free list with best-fit and first-fit strategies.
-            Optimized for reduced fragmentation and analyzed heap performance metrics against the standard glibc allocator.
-        </p>
-    </div>
 
-    <div class="project-item">
-        <div class="project-header">
-            <a href="#" class="project-title">Accident Prediction System</a>
-            <span class="project-meta">Python / TensorFlow</span>
-        </div>
-        <p class="project-desc">
-            Developed a predictive model for accident probabilities using traffic and weather data. 
-            Achieved 85.3% accuracy in forecasting potential accident zones. This project was a finalist in the UYIR Road Safety Hackathon.
-        </p>
-    </div>
 </section>
 {{< /rawhtml >}}

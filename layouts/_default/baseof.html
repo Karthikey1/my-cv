@@ -19,8 +19,7 @@
     <div class="layout-wrapper">
         <header class="nav-header">
             <div class="nav-logo">
-                <a href="{{ .Site.BaseURL }}"
-                    style="text-decoration: none; color: var(--text-primary); font-weight: 700;">{{ .Site.Title }}</a>
+                <a href="{{ .Site.BaseURL }}" class="nav-logo-link">{{ .Site.Title }}</a>
             </div>
             <nav class="nav-links">
                 <a href="/my-cv/about">About</a>
@@ -36,7 +35,7 @@
 
         <footer>
             <span>&copy; {{ now.Year }} {{ .Site.Params.author }}</span>
-            <span>ystems Programming</span>
+            <span>Systems Programming</span>
         </footer>
     </div>
 

@@ -1,13 +1,13 @@
 {{ define "main" }}
 <article>
-    <header style="margin-bottom: 3rem;">
+    <header class="post-header">
         <h1>{{ .Title }}</h1>
-        <div style="font-family: var(--font-mono); color: var(--text-tertiary); margin-top: 0.5rem;">
+        <div class="post-date">
             {{ .Date.Format "January 2, 2006" }}
         </div>
     </header>
 
-    <div style="max-width: 100%; line-height: 1.8;">
+    <div class="post-content">
         {{ .Content }}
     </div>
 </article>

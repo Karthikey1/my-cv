@@ -8,10 +8,13 @@
     {{ range .Pages }}
     <div class="project-item">
         <div class="project-header">
-            <a href="{{ .RelPermalink }}" class="project-title">{{ .Title }}</a>
+            <a href="{{ if .Params.external_url }}{{ .Params.external_url }}{{ else }}{{ .RelPermalink }}{{ end }}"
+                class="project-title" {{ if .Params.external_url }}target="_blank" rel="noopener" {{ end }}>{{ .Title }}
+                <span style="font-size: 0.8em; color: var(--text-tertiary);">{{ if .Params.external_url }}↗{{ end
+                    }}</span></a>
             <span class="project-meta">{{ .Date.Format "Jan 02, 2006" }}</span>
         </div>
-        <p class="project-desc">{{ .Summary }}</p>
+        <p class="project-desc">{{ .Summary | truncate 150 }}</p>
     </div>
     {{ end }}
 </section>

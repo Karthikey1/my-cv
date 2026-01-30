@@ -26,6 +26,16 @@ layout: "single"
             <strong>LinkedIn:</strong><br>
             <a href="https://linkedin.com/in/karthikey-kadati">linkedin.com/in/karthikey-kadati</a>
         </p>
+
+        <p>
+            <strong>RTEMS GitLab:</strong><br>
+            <a href="https://gitlab.rtems.org/karthikey_kadati">gitlab.rtems.org/karthikey_kadati</a>
+        </p>
+
+        <p>
+            <strong>RTEMS Discourse:</strong><br>
+            <a href="https://users.rtems.org/u/karthikey_kadati">users.rtems.org/u/karthikey_kadati</a>
+        </p>
     </div>
 </section>
 {{< /rawhtml >}}
