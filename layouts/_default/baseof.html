@@ -12,7 +12,66 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="/my-cv/styles.css">
+    <link rel="stylesheet" href="{{ `styles.css` | relURL }}">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ `image.png` | relURL }}">
+
+    <!-- Open Graph / SEO -->
+    <meta property="og:title" content="{{ .Site.Title }} | Systems Programmer">
+    <meta property="og:description" content="{{ .Site.Params.description }}">
+    <meta property="og:image" content="{{ `image.png` | absURL }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:type" content="website">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ .Permalink }}">
+
+    <!-- Elite Meta Tags -->
+    <meta name="description" content="{{ .Site.Params.description }}">
+    <meta name="author" content="{{ .Site.Params.author }}">
+    <meta name="keywords"
+        content="Linux Kernel, RTEMS, Operating Systems, Embedded Systems, Systems Programming, C Programming, Real-Time Systems, Rust, Assembly, System Architecture, Memory Management, Virtual Memory, Concurrency, Multithreading, Synchronization, SMP, Inter-process Communication, NUMA, Computer Architecture, Low Level System Design, Microcontrollers, Device Drivers, Interrupt Handling, DMA, MMU, Cache Coherency, SoC Design, FPGA, Computer Science, Software Engineering, Algorithms, Data Structures, Distributed Systems, Low-level Programming, Firmware, Hardware Interface, Compilers, Open Source, Git, GDB, Debugging, Performance Optimization, Kernel Modules, Technical Writing, Mentorship, Code Review, CI/CD, Priority Inversion, Schedulability, Deadlock Prevention, Mutex, Semaphores, Spinlocks, RCU, Lock-free Programming, Real-Time Analysis, Karthikey Kadati">
+
+    <!-- JSON-LD Semantic SEO (The "God Tier" Graph) -->
+    <script type="application/ld+json">
+    [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "{{ .Site.Title }}",
+          "url": "{{ .Site.BaseURL }}",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "{{ .Site.BaseURL }}?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "{{ .Site.Params.author }}",
+          "url": "{{ .Site.BaseURL }}",
+          "jobTitle": "Systems Software Engineer",
+          "disambiguatingDescription": "Linux Kernel Contributor and RTEMS Developer",
+          "image": "{{ `image.png` | absURL }}",
+          "sameAs": [
+            "https://github.com/Karthikey1",
+            "https://linkedin.com/in/karthikey-kadati",
+            "https://gitlab.rtems.org/karthikey_kadati",
+            "https://users.rtems.org/u/karthikey_kadati"
+          ],
+          "knowsAbout": [
+            "Linux Kernel", "RTEMS", "Operating Systems", "Embedded Systems", "Systems Programming", "C Programming", "Real-Time Systems", "Rust", "Assembly",
+            "System Architecture", "Memory Management", "Virtual Memory", "Concurrency", "Multithreading", "Synchronization", "SMP", "Inter-process Communication", "NUMA",
+            "Computer Architecture", "Low Level System Design", "Microcontrollers", "Device Drivers", "Interrupt Handling", "DMA", "MMU", "Cache Coherency", "SoC Design", "FPGA",
+            "Computer Science", "Software Engineering", "Algorithms", "Data Structures", "Distributed Systems", "Low-level Programming", "Firmware", "Hardware Interface", "Compilers",
+            "Open Source", "Git", "GDB", "Debugging", "Performance Optimization", "Kernel Modules", "Technical Writing", "Mentorship", "Code Review", "CI/CD",
+            "Priority Inversion", "Schedulability", "Deadlock Prevention", "Mutex", "Semaphores", "Spinlocks", "RCU", "Lock-free Programming", "Real-Time Analysis"
+          ]
+        }
+    ]
+    </script>
 </head>
 
 <body>
@@ -22,10 +81,9 @@
                 <a href="{{ .Site.BaseURL }}" class="nav-logo-link">{{ .Site.Title }}</a>
             </div>
             <nav class="nav-links">
-                <a href="/my-cv/about">About</a>
-                <a href="/my-cv/work">Work</a>
-                <a href="/my-cv/contact">Contact</a>
-                <a href="/my-cv/posts">Posts</a>
+                {{ range .Site.Menus.main }}
+                <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+                {{ end }}
             </nav>
         </header>
 
@@ -39,7 +97,7 @@
         </footer>
     </div>
 
-    <script src="/my-cv/script.js"></script>
+    <script src="{{ `script.js` | relURL }}"></script>
 </body>
 
 </html>

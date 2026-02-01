@@ -43,4 +43,4 @@ Dr. Chen suggested this as the "perfect next step". Unlike standard FMLP, the di
 
 That is the vision for GSoC 2026.
 
-*[Read Part 1: Implementation Logic](/my-cv/posts/fmlp-rtems-implementation)*
+*[Read Part 1: Implementation Logic](/posts/fmlp-rtems-implementation)*

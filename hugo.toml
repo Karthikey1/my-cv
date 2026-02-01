@@ -1,4 +1,4 @@
-baseURL = 'https://karthikey1.github.io/my-cv/'
+baseURL = 'https://karthikeykadati.com/'
 languageCode = 'en-us'
 title = 'Karthikey Kadati'
 theme = []
@@ -30,4 +30,16 @@ theme = []
     identifier = "contact"
     name = "Contact"
     url = "/contact/"
+    weight = 5
+
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 3
+
+  [[menu.main]]
+    identifier = "work"
+    name = "Work"
+    url = "/work/"
     weight = 4
