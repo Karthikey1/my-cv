@@ -20,10 +20,26 @@
     <!-- Open Graph / SEO -->
     <meta property="og:title" content="{{ .Site.Title }} | Systems Programmer">
     <meta property="og:description" content="{{ .Site.Params.description }}">
-    <meta property="og:image" content="{{ `og-image.png` | absURL }}">
     <meta property="og:url" content="{{ .Permalink }}">
     <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="description" content="{{ .Site.Params.description }}">
+    <meta name="keywords" content="Linux Kernel, RTEMS, Systems Programming, C, Embedded Systems, Karthikey Kadati">
+    <meta name="author" content="{{ .Site.Params.author }}">
+
+    <!-- JSON-LD Semantic SEO (The "Elite" Stuff) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "{{ .Site.Params.author }}",
+      "url": "{{ .Site.BaseURL }}",
+      "jobTitle": "Systems Programmer",
+      "knowsAbout": ["Linux Kernel", "RTEMS", "Operating Systems", "C", "Embedded Systems"],
+      "sameAs": [
+        "https://github.com/Karthikey1"
+      ]
+    }
+    </script>
 </head>
 
 <body>
