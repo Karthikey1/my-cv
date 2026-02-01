@@ -23,23 +23,54 @@
     <meta property="og:image" content="{{ `image.png` | absURL }}">
     <meta property="og:url" content="{{ .Permalink }}">
     <meta property="og:type" content="website">
-    <meta name="description" content="{{ .Site.Params.description }}">
-    <meta name="keywords" content="Linux Kernel, RTEMS, Systems Programming, C, Embedded Systems, Karthikey Kadati">
-    <meta name="author" content="{{ .Site.Params.author }}">
 
-    <!-- JSON-LD Semantic SEO (The "Elite" Stuff) -->
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ .Permalink }}">
+
+    <!-- Elite Meta Tags -->
+    <meta name="description" content="{{ .Site.Params.description }}">
+    <meta name="author" content="{{ .Site.Params.author }}">
+    <meta name="keywords"
+        content="Linux Kernel, RTEMS, Operating Systems, Embedded Systems, Systems Programming, C Programming, Real-Time Systems, Rust, Assembly, System Architecture, Memory Management, Virtual Memory, Concurrency, Multithreading, Synchronization, SMP, Inter-process Communication, NUMA, Computer Architecture, Low Level System Design, Microcontrollers, Device Drivers, Interrupt Handling, DMA, MMU, Cache Coherency, SoC Design, FPGA, Computer Science, Software Engineering, Algorithms, Data Structures, Distributed Systems, Low-level Programming, Firmware, Hardware Interface, Compilers, Open Source, Git, GDB, Debugging, Performance Optimization, Kernel Modules, Technical Writing, Mentorship, Code Review, CI/CD, Priority Inversion, Schedulability, Deadlock Prevention, Mutex, Semaphores, Spinlocks, RCU, Lock-free Programming, Real-Time Analysis, Karthikey Kadati">
+
+    <!-- JSON-LD Semantic SEO (The "God Tier" Graph) -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "{{ .Site.Params.author }}",
-      "url": "{{ .Site.BaseURL }}",
-      "jobTitle": "Systems Programmer",
-      "knowsAbout": ["Linux Kernel", "RTEMS", "Operating Systems", "C", "Embedded Systems"],
-      "sameAs": [
-        "https://github.com/Karthikey1"
-      ]
-    }
+    [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "{{ .Site.Title }}",
+          "url": "{{ .Site.BaseURL }}",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "{{ .Site.BaseURL }}?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "{{ .Site.Params.author }}",
+          "url": "{{ .Site.BaseURL }}",
+          "jobTitle": "Systems Software Engineer",
+          "disambiguatingDescription": "Linux Kernel Contributor and RTEMS Developer",
+          "image": "{{ `image.png` | absURL }}",
+          "sameAs": [
+            "https://github.com/Karthikey1",
+            "https://linkedin.com/in/karthikey-kadati",
+            "https://gitlab.rtems.org/karthikey_kadati",
+            "https://users.rtems.org/u/karthikey_kadati"
+          ],
+          "knowsAbout": [
+            "Linux Kernel", "RTEMS", "Operating Systems", "Embedded Systems", "Systems Programming", "C Programming", "Real-Time Systems", "Rust", "Assembly",
+            "System Architecture", "Memory Management", "Virtual Memory", "Concurrency", "Multithreading", "Synchronization", "SMP", "Inter-process Communication", "NUMA",
+            "Computer Architecture", "Low Level System Design", "Microcontrollers", "Device Drivers", "Interrupt Handling", "DMA", "MMU", "Cache Coherency", "SoC Design", "FPGA",
+            "Computer Science", "Software Engineering", "Algorithms", "Data Structures", "Distributed Systems", "Low-level Programming", "Firmware", "Hardware Interface", "Compilers",
+            "Open Source", "Git", "GDB", "Debugging", "Performance Optimization", "Kernel Modules", "Technical Writing", "Mentorship", "Code Review", "CI/CD",
+            "Priority Inversion", "Schedulability", "Deadlock Prevention", "Mutex", "Semaphores", "Spinlocks", "RCU", "Lock-free Programming", "Real-Time Analysis"
+          ]
+        }
+    ]
     </script>
 </head>
 
